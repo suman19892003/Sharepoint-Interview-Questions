@@ -1,0 +1,776 @@
+//Modern SharePoint - 13-02-2021
+1. What basically happens when we create modern sites in terms of group? How it is managed?- Owner, Member and guest is created in Modern.
+2. How to change classic site to modern site?
+3. How to create creating a modern site template?  whats are ways to create?
+4. How we can use CQWP/CEWP in Modern page?
+5. search Configuration in Modern Site?
+6. Site Template in Modern Site.
+7. Modern site header and footer design change, Navigation
+8. What are new template intoduced in Modern site?
+9. Community hub in Modern Site?
+10.List View design in Modern Site?
+11.New List template introduced in Modern site?
+12.New Field type intoduced in Modern Site? - Location type,
+13.Space in Modern Site? - Show image in 3d, audio/video
+14. What have you done in Modern Site?
+15. Change font size in Modern Site?
+16. ULS Logs in SP Online
+17. Diff between team site and communication site?
+18. What is dictributed cache ervice if deactivated in SP Online?
+19. Command to get all sitecollection and subsite in any environment.
+20. how many days will site/subsite available after delete?
+21. Overcome List view threshold in SP Online?
+22. Event Handlers in SP Oline? How we can achieve?
+23. DCS Feature in SP Online?
+24. Diff between Infopath and PowerApps
+25. Import Custom JS and CSS spfx?
+26. Create 4 section Layouts, header and footer in SPFX?
+27. Include Bootstrap and create table/navigation sturucture in spfx.
+28. Error Handling in SPFX? using pnp/logging
+29. Diff between modern site and communication site?
+30. Pass parameter from child to parent in react?
+31. How to access list just I want to perform crude operation but when navigating to list/content should throw me access denied issue.
+32. React Life cycle method?
+33. Configure search to get record from current site collection?
+34. Customize SPLIst view in modern as well as classic site?
+35. How we can update list item in Flow without updating system time. We need to update the list item with the user information.
+36. Call flow/PowerApps using Powershell. How to trigger fom powershell.
+37. what will happen if we convert from classic to modern in terms of group.
+38. Difference between edit and contribute permisson?
+39. Error handling in PowerApps?(Cognizant)
+40. Error handling in PowerAutomate?(Cognizant)
+40. How many types of connectors in PowerApps?
+41. External sharing is enabled by default in team but not in communication.
+42. Which will be created first if we have created Modern team site? It will be group/site?(Cognizant)
+42. What will happen if we deleet group of Modern Team site?(Cognizant)
+Ans: Nothing happens even after deleting group as site will not be deleted.
+43. Call flow from custom button.(Cognizant)
+44. How to create retention policy in Modern Site?(Cognizant)
+45. What is difference in hierarchy you find in SP Online and SP Onprem?(Cognizant).
+Ans: I can create web application in Onprem but we can create only site collection in Online.
+46. Create custom button in ribbon and action in modern list view?
+47. How to trigger flow from SP list or page?
+48. Trigger powershell script in flow?
+49. Do we have record center avaialble in SPOnline? If not what are other alternative?
+50. Templates available in SPO Site for new site creation?
+51. What is hub in Sharepoint? Not content type hub
+52. What are resources in POwerApps?
+53. What are channel?
+54. How to make PowerApps responsive?
+55. Have you worked with External library in SPFX?
+56. Single Page application in SPFX?
+57. What are options in creating extensions in SPFX?
+58. Modal driven app? How to use? Features?
+59. How to manage SPFX package app for specific user only?
+60. Run with Elevated Priviledges in SPFX?
+61. Run MS Flow from user account not from service account?
+62. Shallow modification in MS flow without updating time in SP time in list?
+63. Diff between storage limit on OPremise and azure?Nikhil
+64. Azure web service?Nikhil
+65. We have 6 list in 5 site collection. How we can get all records clubbed together in REST api?
+66. Get data from myfeed from external source and show in calendar events?
+67. Can we send email to group in MS Flow?
+68. How we can provide access so that no access to list only on powerapps he shoulb be able to perform operation
+69. Call multiple async method in SPFX? -Aggreya
+70. How to pass Props back to Parent from child? -Aggreya
+71. High order component and stateless component diff? -Aggreya
+72. Lifecycle React? -Aggreya
+73. How many times ComponentDidMount is called in React? -Aggreya
+74. React Life cycle? -Aggreya
+75. In which class does SPFX class inherits? -Aggreya
+76. How many times ComponentDidMount is called in an application? -Aggreya
+77. Which is called first- Constructor or Render? -Aggreya
+78. Display chart in PowerApps from SP List?
+79. Web Jobs scheduling in Azure? - TCS
+80. Azure Functions? - TCS
+81. Print PDF in Modern SPFX webpart? - TCS
+82. Search in Modern experinence not in Classic?-TCS
+83. Import custom CSS file and apply to SPFX solution? Is it possible?
+84. Limit on Document upload size in modern site? 10GB for modern
+85. Observable in limit
+86. List Attachment size in SP list- 250 MB
+87. Versioning limit in modern list and what for library?-500 can go upto 1000
+88. 
+
+
+
+Single Page application in SPFX?
+Impersonation in SPFX?
+What is library in SPFX?
+full width file in SPFX?
+Check if full width is available in Team Site for SPFX?
+How to make your powerapp apps responsive?
+Diff between IsBlank() and IsEmpty() in PowerApps?
+What are Azure functions?
+How to schedule in Azure?
+
+
+
+46. Difference between publishing feature in SP Modern and SP On prem?(Cognizant)
+47. Get current user details and its group assigned uisng PNP?(Cognizant)
+48. debugging in SPFX solution?(Cognizant)
+
+
+49. Pass parameter in PowerApps and how to read in navigated screen?(Cognizant)
+on first page, Navigate(editscreen, {itemtopass:gallery.selected.id})
+On edit screen, bind edit screen form with datasource list(EG), then for item of edit form First(Filter(EG, Id=itemtopass))
+
+49. Access any list in root web for subsite?
+import { sp } from "@pnp/sp";
+import "@pnp/sp/sites";
+// use for chaining
+const rootweb = await sp.site.getRootWeb();
+const listData = await rootWeb.lists.getByTitle("MyList")();
+
+50. How to check if current site is site or web in SPFX solution?
+
+51. Bind data from 2 list in single gallery powerapps?
+I have 2 data sources.
+a. Table 1{ID, Name, Date, Ticket Details}
+b. Table 2 {ID, Name, Region}
+gallery1.Items = AddColumns(Table1, "Region", LookUp(Table2, Name = Table1[@Name], Region))// It will bring region column from second list and bind with table1.
+
+52. How response is received from MS flow back to PowerApps?
+We have action as Respond to PowerApps or flow which supports Text/Number/YesNo/Date etc.
+
+53. Diff between collect and clearcollect powerapps?
+ClearCollect( IceCream, { Flavor: "Strawberry", Quantity: 300 } )//Clears all data from the IceCream collection and then adds a record
+Collect( IceCream, { Flavor: "Pistachio", Quantity: 40 }, { Flavor: "Orange", Quantity: 200 } )//Adds two records to the IceCream collection along with Straeberry which will be also available in IceCream collection.
+Clear( IceCream )//Removes all records from the IceCream collection.
+
+54. Wipro Interview Questions
+Solutions
+environment variables
+Child Flow
+
+Datawords
+
+SumanKumar@selfdevlearn.onmicrosoft.com
+
+Microsoft@123
+
+Task
+
+Azure schedudling for PoweShell script.
+Modern Team site Features.
+
+
+
+35. How to check user group in SharePoint PowerShell/PNP?
+
+
+36. Diff between Microsoft365 and Security group?
+37. Get item more than 5000 records in PowerApps?
+38. Promise Iplementaion in Ajax.
+39. How does resolve and return works in Jquery?
+40. get informaton from multiple list AJAX?
+41. Foreach Array in AJAX?
+42. React lifecycle and methods?
+43. How to pass response in .then method AJAX?
+44. What is difference btwn public and private team?
+45. Can we deploy wsp to sharepoint online?
+46. Migration from 2013/2016 to Online?
+47. How to check file name in event receiver?
+47. Difference between SharePoint REST api and Get List Items?
+47. If we can call any method asynchronously then when we require Promise?
+47. Promoted action in SP Online?
+47. What are all delegate functions in PowerApps?
+47. Cross site publishing?
+47. Set State and force update diff?
+48. How many result we get feom GET data from SQL?
+49. Add custom button in list view SPFX?
+50. Rest api date field comparision?
+51. What are ways to create synchronous event in SPOnline like event handlers?
+
+
+
+
+where to initialise component
+
+
+//PowerApps Virtusa
+48. What are types of variables in PowerApps?
+49. Diff between Set and Collect Function?
+50. Create repeating table in PowerApps as we used to create in Infopath?
+51. How to store array of collection to list in PowerApps?
+52. Update values in PowerApps using Patch function--Syntax?
+53. How to get 10000 records in PowerApps? What are ways to achieve this?
+54. How to get more than 10000 records in MS Flow?
+55. What is total item count returned from Get List Item in MS Flow?
+56. How to provide popup on every page load in powerapps?
+57. How to increase count on every page visit and show on PowerApps page?
+58. What is component in PowerApps? ( Virtusa + Noida company)
+59. Have you created any custom trigger?
+
+
+
+How to add webpart property in spfx?
+We can add inside getPropertyPaneConfiguration in mainwebpart.ts.
+
+add new button in spfx?
+spfx architecutre?
+Customized Search in SPFX?
+Microsoft Search Configure?
+
+
+People Picker control in SPFX?
+We need to install to use People Picker field
+npm install @pnp/spfx-controls-react 
+
+
+
+
+How many records we get in get rows in MSFlow?
+"@length(body('Get_rows')?['value'])".2048 is default limit in Get rows.
+In the SQL Get_rows part of my flow, I went to the 3 dots and Settings. I forced PAGINATION to ON and set to max 5000. 
+I am now getting all of my content to pull.
+256 is default limit for Get Rows from Excel but we can enable pagination and set to max 5000.
+
+
+
+
+//SPFX
+56. How to store data to multiple list one with collection of array and other textbox values and store simulataneously in SPFX? And display final success message.
+57. Why we should state if we can use normal variable in React?
+58. How to implement people picker field in spfx?
+59. Office UI Fabric usage?
+60. Required field validation and error handling?
+61. How to add custom field property Panel in SPFX?
+62. Hoe components can communicate each other in react?
+63. How do I handle long running scripts in SPFX?
+64. 
+
+
+
+
+//REACT
+Form Validation in React
+
+
+
+
+//Inject Custom CSS
+https://tahoeninjas.blog/2018/05/08/inject-custom-css-on-sharepoint-modern-pages-using-spfx-extensions/
+
+
+
+//Classic Site - 14-02-2021
+1. 
+
+//PowerApps - 
+
+
+
+//SPFX
+1. How to get current context in SPFX?
+2. How to include client side file in Powershell.
+3. Error Hanling in SPFX webpart?
+
+
+
+//Solution
+1. Flow method that takes time
+
+Method
+Time to Execute
+Standard “Get Items”
+111 Seconds
+Standard “Get Items” with Select Action
+67 Seconds
+Retreiving same data with SharePoint API
+31 Seconds
+Retreiving same data with SharePoint API and two parralel queries
+19 Seconds
+Retreiving same data with SharePoint API and four parralel queries
+13 Seconds
+Same as above with optimised flow
+8 Seconds
+
+2. For Handling flow more than 5000 records
+https://www.tachytelic.net/2020/04/many-ways-get-sharepoint-items-power-automate/
+
+3. Filter, Search, and LookUp can be delegated.
+Below are non delegable functon.
+First, FirstN, Last, LastN
+Choices
+Concat
+Collect, ClearCollect
+CountIf, RemoveIf, UpdateIf
+GroupBy, Ungroup
+
+Note: For Non delegable function, it can bring record upto 500 which can be set to 2000.
+
+4. UpdateIf can also be used in PowerApps to update values
+UpdateIf( IceCream, Quantity > 175, { Quantity: Quantity + 10 } )
+
+5. Patch for update existing record
+Patch(
+   LeaveRequests,
+ Lookup(LeaveRequests,ID="THE ID You want to update"),
+   {
+   User:     DataCardValue6.Text,
+   UserEmail:"suman@email.com"
+})
+
+6. Why we should state if we can use normal variable in React?
+Updating state will make the component to re-render again, but local values are not.
+
+In your case, you rendered that value in your component. That means, when the value is changed, the component should be re-rendered to show the updated value.
+
+So it will be better to use useState than normal local value.
+
+function Foo() {
+    let a = 0;
+    a = 1; // there will be no re-render.
+    return <div>{a}</div>;
+}
+
+function Foo() {
+    const [a, setA] = useState(0);
+    if (a != 1) setA(1); // re-render required
+    return <div>{a}</div>;
+}
+
+7. Modern team Site and comunication site diff?
+a. Team Collaboration
+When you want to create a place
+where the members of a workgroup
+or project team can collaborate on
+project details, plan tasks; events or
+exchange ideas, you want a team site.
+When you want to broadcast news,
+tell a story or share content for
+viewing or showcase services or
+people, you want a communication site.
+b. A New Office Group will be created and coupled with the site. Sites are
+Public by default in team site. 
+But in comm site Office Group will not be created.
+Sites are Private by default.
+c. All members are content authors in the site who jointly create or edit the
+content on site. In Comm site Few members are content authors
+and a large number of members are
+content readers or consumers.
+
+8. For Modern UI, we can create a custom CSS style and inject the CSS on modern pages using SPFx extensions to achieve it.
+
+9. While creating Team site collection from admin center, we get only 2 option for Privacy setting as Private and Public only. And it does not create SharePoint Group.
+But When yu create Subsite inde this site collection of any template, it will create SP group for that subsite.
+
+10. When we try to create group from admin center, we get 4 options as Microsoft 365,Distribution,Mail-enabled security,Security. Now while creating this group we also get option if we want to create team associated with this group and accordingly teams may or maynot be created.
+If we wnat to add this group to our SharePoint we can add by "TestMS365Group Member" as our group name was only "TestMS365Group".
+
+11. Get Subsites of a Site using PowerShell PnP
+$SiteURL = "https://crescenttech.sharepoint.com"
+ 
+#Get Credentials to connect
+$Cred = Get-Credential
+ 
+Try {
+    #Connect to PNP Online
+    Connect-PnPOnline -Url $SiteURL -Credentials $Cred
+ 
+    #Get subsites in SharePoint Online using PnP PowerShell
+    $WebsCollection = Get-PnPSubWebs -Recurse
+ 
+    ForEach($Web in $WebsCollection)
+    {
+        Write-host $Web.Url
+    }
+}
+catch {
+    write-host "Error: $($_.Exception.Message)" -foregroundcolor Red
+}
+
+12. Get-PnPTenantSite //Returns all site collections
+
+13. Get all site collection admin in all site collection
+# Get the site collections  
+$siteColl=Get-PnPTenantSite  
+  
+# Loop through the site collections  
+foreach($site in $siteColl)  
+{  
+    write-host -ForegroundColor Green "Getting SCA from site: " $site.Url  
+    Connect-PnPOnline -Url $site.Url -Credentials $credentials  
+  
+    # Get the site collection administrators  
+    $scaColl=Get-PnPSiteCollectionAdmin   
+    foreach($sca in $scaColl)  
+    {          
+        $sca  
+    }  
+}
+
+14. Create New site collection
+New-PnPTenantSite -Title Contoso -Url "https://tenant.sharepoint.com/sites/contoso" -Owner user@example.org -TimeZone 4 -Template STS#0
+
+15. React Lifecycle
+Mounting
+These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+
+constructor()
+static getDerivedStateFromProps()
+render()
+componentDidMount()
+
+Updating
+An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+
+static getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+
+Unmounting
+This method is called when a component is being removed from the DOM:
+
+componentWillUnmount()
+
+16. For Error handling, we have
+Error Handling
+These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+
+static getDerivedStateFromError()
+componentDidCatch()
+
+17. OnPremise gateway is used to fetch data from 
+
+Remove duplicate data from SharePoint library.
+
+18. SPFX lifecycle
+1. OnInit method – This is the start method of the web part. It is suggested not to do much here, unless it is required by the webpart life cycle.
+Use Case: Mostly this method could be used initiate environment level variables or global variables such as spcontext of PnPjs library.
+2. ComponentWillMount – This method is called before the render method every time the control is loaded or refreshed.
+Use cases: The code related to initial data pull for controls could be placed in this method. This is where the data feeds into required for dependency driven controls for eg. Web service and REST calls. It is advisable to show a loading message during this function run.
+3. 3. ComponentDidMount – This method is called after the render method every time the control is loaded or refreshed. The code related to pre-population of controls could be placed here.
+Use cases: This method is mostly used to load the state of the controls. Since React code is a state driven Framework, any state changes updates the controls with new changes but doing it here allows to set default values if needed before the state is updated for long running business rules.
+4. ComponentDidUpdate – This method is called every time a Property or State is updated. Based on the update and if anything has changed, the implementation code could be run.
+Use cases: In this method, we could check if a property or state has changed and act on the change.
+5. Render method : This method is called to render the final HTML based on state change. We can include some switch logic or call html rendering functions.
+Use cases: The use case is pretty simple for this one, reneder all the HTML on to the page.
+
+19. Why we should state if we can use normal variable in React?
+If you will use simple variable, You can click the button to increase the count, but the count value displayed in the component will never change.If you throw a breakpoint or add a console.log to increment(), you’d see that the method is indeed called and the value of this.count is incremented, but the component never reflects the change.
+That’s because React components will only re-render when there are changes to props or state.Updating the class variable involves neither, so it does not trigger a re-render. This explains why the count changes in our example, but the displayed value never updates.
+
+20. setstate and forceupdate difference?
+The setState() function is typically used to update the component state with one or more new state properties. This is the typical way of mutating your state and managing view updates.
+The forceUpdate() function is just a way to force a re-render of the component and its children in question. It does not mutate the state at all.
+But You should avoid to use forceUpdate function.
+
+21. this.domelement.queryselector('#mydiv').innerhtml=htmlstring;
+
+22. SPFX get current user, this.props.context.get(this.props.siteurl+"/_api/SP.UserProfiles.PeopleManager/GetMyProperties",SPHttpClient.configurations.v1).then(res=>{}
+
+23.sp.web.currentuser.get().then(res=>{})
+
+24. For success/error message we can use Notify("Request deleted",NotificationType.Success); function. It has four type as success, error, information, warning.
+
+25. Community Site does nt have left navigation but it has top navigation. Modern team has left navigation but not top navigatio.
+Community sites external sharing is disabled but in team site it is enabled.
+Site Owner/member and visitor are by default created for both but Office 365 group is created only for team site.
+
+26.on first page, Navigate(editscreen, {itemtopass:gallery.selected.id})
+On edit screen, bind edit screen form with datasource list(EG), then for item of edit form First(Filter(EG, Id=itemtopass))
+
+27. Get context information for the current site collection?
+import { sp } from "@pnp/sp";
+import "@pnp/sp/sites";
+import { IContextInfo } from "@pnp/sp/sites";
+const oContext: IContextInfo = await sp.site.getContextInfo();
+console.log(oContext.FormDigestValue);
+
+28. Check if a Site Collection Exists?
+import { sp } from "@pnp/sp";
+// Specify which site to verify
+const siteUrl = "https://tenant.sharepoint.com/sites/subsite";
+const exists = sp.site.exists(siteUrl);
+console.log(exists);
+
+29. Retrieving Lookup Fields
+import { sp } from "@pnp/sp";
+import "@pnp/sp/webs";
+import "@pnp/sp/lists";
+import "@pnp/sp/items";
+const items = await sp.web.lists.getByTitle("LookupList").items.select("Title", "Lookup/Title", "Lookup/ID").expand("Lookup").get();
+console.log(items);
+
+30. Add Multiple Items in List using Batch
+import { sp } from "@pnp/sp";
+import "@pnp/sp/webs";
+import "@pnp/sp/lists";
+import "@pnp/sp/items";
+
+let list = sp.web.lists.getByTitle("rapidadd");
+const entityTypeFullName = await list.getListItemEntityTypeFullName()
+let batch = sp.web.createBatch();
+list.items.inBatch(batch).add({ Title: "Batch 6" }, entityTypeFullName).then(b => {
+  console.log(b);
+});
+list.items.inBatch(batch).add({ Title: "Batch 7" }, entityTypeFullName).then(b => {
+  console.log(b);
+});
+
+await batch.execute();
+console.log("Done");
+
+31. Use PnP JS To Fetch List Items From Other Site Collection?
+private web = Web("https://testinglala.sharepoint.com/sites/Test/");  
+public componentDidMount = () => {  
+    this.web.lists.getByTitle("Employee").items().then((items) => {  
+        this.setState({  
+            listItems: items  
+        });  
+    }).catch((err) => {  
+        console.log(err);  
+    });  
+}
+
+32. How to make Pnp function async in spfx framework?
+function GetServiceListData():Promise<any>  
+{ 
+    return pnp.sp.web.lists.getByTitle('Test').items
+        .select('Title,FullName,DOJ,ManagerName/Title')
+        .expand('ManagerName')
+        .get();
+}
+function successCallback(response){
+    //do things with response in a callback
+}
+function errorCallback(error){
+    //handle error
+}
+//usage
+GetServiceListData()
+    .then(successCallback)
+    .catch(errorCallback);
+
+33. Use delegation
+Delegation is a mechanism to access all data from a data source in a performance friendly manner.All results are fetched in a maximum of 100 items bundles. The next bundle is being fetched once a user scroll to the end of a gallery/table list.Collections are not supported and works under non-delegable queries limitation (Collect() or ClearCollect() functions breaks delegation!)
+
+34. Include "supportsFullBleed": true, in *.manifest.json file to support full width of SPFX.
+
+35. REST api takes list display name for api call, _spPageContextInfo.webabsoluteUrl+"/_api/web/list/getByTitle('List Display Name')/items?$select='Title'"
+
+36. Creating A Custom Component In Power Apps
+Many times as a developer we face a situation where we have to repeat functionality across a form multiple times. For a simple example let us assume that a combination of Textbox, Label and button is required on multiple places inside the form. Most of the time, we keep inserting 3 controls every time we require the combination. Although Power Apps provides us option to select the controls and paste it in multiple places in the form, but that is not the best practice. The best way to go forward would be to create a custom component and use it every time the combination (Textbox, Label and button) is required. Below is the step by step way for creating a custom component in Power Apps and how to use that component in multiple places inside the Power Apps form.
+
+37. Create custom button in list item action in modern list view?
+a. Create an XML file and save as below in local path.
+<pnp:ProvisioningTemplate ID="EditControlBlockSamples" Version="1" xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+  <pnp:CustomActions>
+    <pnp:SiteCustomActions>
+      <pnp:CustomAction Name="CA_1" Description="ca 1" Location="EditControlBlock" RegistrationType="List" RegistrationId="101" Title="CA 1 Title" Sequence="3000" Url="https://contoso.azurewebsites.net/pages/index.aspx" Enabled="true"/>
+      <pnp:CustomAction Name="CA_2" Description="ca 2" Location="EditControlBlock" RegistrationType="ContentType" RegistrationId="0x0101" Title="CA 2 Title" Sequence="4000" Url="https://contoso.azurewebsites.net/pages/index.aspx" Enabled="true"/>
+    </pnp:SiteCustomActions>
+  </pnp:CustomActions>
+</pnp:ProvisioningTemplate>
+b. Now run the bwlow powershell script
+# Connect to a previously created Modern Site
+$cred = Get-Credential
+Connect-PnPOnline -Url https://[tenant].sharepoint.com/sites/siteurl -Credentials $cred
+
+# Apply the PnP provisioning template
+Apply-PnPProvisioningTemplate -Path c:\customaction_modern_editcontrolblock.xml -Handlers CustomActions
+
+38. Similarly we can do Command ribbon button in list/library?
+<pnp:ProvisioningTemplate ID="CommandUIRibbonSamples" Version="1" xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+  <pnp:CustomActions>
+    <pnp:SiteCustomActions>
+      <pnp:CustomAction Name="CA_4" Description="ca 4" Location="CommandUI.Ribbon" RegistrationType="List" RegistrationId="101" Title="CA 4 Title" Sequence="6000" Enabled="true">
+        <pnp:CommandUIExtension>
+<CommandUIDefinitions>
+        <CommandUIDefinition Location="Ribbon.Documents.Copies.Controls._children">
+          <Button
+            Id="Ribbon.Documents.Copies.OfficeDevPnPDownloadAll"
+            Command="OfficeDevPnP.Cmd.DownloadAll"
+            Image16by16="/_layouts/15/images/sharepointfoundation16.png"
+            LabelText="Download All"
+            Description="Download all files separately"
+            ToolTipTitle="Download All"
+            ToolTipDescription="Download all files separately"
+            TemplateAlias="o1"
+            Sequence="15"/>
+        </CommandUIDefinition>
+      </CommandUIDefinitions>
+      <CommandUIHandlers>
+        <CommandUIHandler
+          Command="OfficeDevPnP.Cmd.DownloadAll"
+          CommandAction="https://contoso.azurewebsites.net/pages/index.aspx" />
+      </CommandUIHandlers>
+    </pnp:CommandUIExtension>
+      </pnp:CustomAction>
+    </pnp:SiteCustomActions>
+  </pnp:CustomActions>
+</pnp:ProvisioningTemplate>
+
+47. How to trigger flow from SP list or page?
+We can create current button in SharePoint list view. Steps- Create sinle line column > Then Format this column > Provide JSON input.
+
+48. Form control by default have New, View and Edit mode.
+
+49. SPFX extension has bydefault OnInit method where we can get this.context.placeholderProvider.placeholderNames and can apply condition as if (!this._topPlaceholder) {} and by using this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top)
+
+50. Pass parameter from parent to child in react?
+In Parent
+<Child2 dataFromParent = {this.state.data} />
+In Child
+return (
+            <div>
+                The data from parent is:{this.props.dataFromParent}
+            </div>
+        );
+
+51. From Child to Parent Using Callbacks?
+In Parent:
+state = { message: "" }
+callbackFunction = (childData) => {
+      this.setState({message: childData})
+},
+render() {
+        return (
+            <div>
+                 <Child1 parentCallback = {this.callbackFunction}/>
+                 <p> {this.state.message} </p>
+            </div>
+        );
+}
+}
+In Child:
+sendData = () => {
+         this.props.parentCallback("Hey Popsie, How’s it going?");
+    },
+render() { 
+//you can call function sendData whenever you'd like to send data from child component to Parent component.
+    }
+
+52. Use Context api to share data between?
+Step1 : Pass the state and the callback function as props to all children inside the Provider Component.
+export const MContext = React.createContext();  //exporting context object
+class MyProvider extends Component {
+state = {message: ""}
+render() {
+        return (
+            <MContext.Provider value={
+            {   state: this.state,
+                setMessage: (value) => this.setState({
+                            message: value })}}>
+            {this.props.children}   //this indicates that the global store is accessible to all the child tags with MyProvider as Parent
+            </MContext.Provider>)
+    }
+}
+
+Step2 : Use MyProvider component as a Parent to the two children — Child1, Child2.
+render() {
+        return (
+            <div>
+                 <MyProvider>
+                      <div className="App">
+                      <Child1/>
+                      <Child2/>
+                      </div>
+               </MyProvider>
+            </div>
+        );
+}
+Step 3: Implement the desired result in the same manner, but this time, using ContextObject.Consumer
+render() {
+    return (
+        <div>
+        <Mcontext.Consumer>
+        {(context) => (
+       <button onClick={()=>{context.setMessage("New Arrival")}}>Send</button>
+       )}
+        </Mcontext.Consumer>
+        </div>
+    ) }
+Now we can accessing the Provider withing Consumer tags
+<Mcontext.Consumer>
+             {(context) => (
+              <p>{context.state.message}}</p>)}
+            </Mcontext.Consumer>
+
+Q. React Life cycle method?
+Mounting:These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+constructor()
+static getDerivedStateFromProps()
+render()
+componentDidMount()
+Updating:An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+static getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+Unmounting:This method is called when a component is being removed from the DOM:
+componentWillUnmount()
+
+Q. Error Handling?These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+static getDerivedStateFromError()
+componentDidCatch()
+
+Q. SPFX React Component Lifecycle methods:
+OnInit-This is the start method of the web part.
+Render method : This method is called to render the final HTML based on state change. We can include some switch logic or call html rendering functions.
+ComponentWillMount – This method is called before the render method every time the control is loaded or refreshed.
+ComponentDidMount – This method is called after the render method every time the control is loaded or refreshed. The code related to pre-population of controls could be placed here.
+ComponentDidUpdate – This method is called every time a Property or State is updated. Based on the update and if anything has changed, the implementation code could be run.
+
+Q. In Order to add properperties to the webpart
+Add inside, getPropertyPaneConfiguration
+
+Q. Current site context
+1. In props.ts
+import {HttpClient} from '@microsoft/sp-http';
+context:HttpClient;
+  siteUrl: string;
+2. In main webaprt.ts
+context:this.context.httpClient,
+siteUrl: this.context.pageContext.web.absoluteUrl
+3. In webaprt.tsx
+import {SPHttpClient,SPHttpClientResponse} from '@microsoft/sp-http';
+this.props.context.get(`${this.props.siteUrl}/_api/web/lists/getbytitle('Request')/items?select=ID,Title`,
+      SPHttpClient.configurations.v1).then((response: SPHttpClientResponse) => {}
+
+Q. const userId = this.context.pageContext.user.loginName;
+or
+http://siteurl/_api/SP.UserProfiles.PeopleManager/GetMyProperties
+
+Q. Get all sites and subsite:
+$credentials = Get - Credential  
+$URL = Read - Host - Prompt 'Please enter admin site collection URL it would be in the format https://<<tenantname>>-admin.sharepoint.com'  
+# Connect to SharePoint Online  
+Connect - PnPOnline - Url $URL - Credentials $credentials  
+# Get the site collections  
+$siteColl = Get - PnPTenantSite  
+# Loop through the site collections  
+foreach($site in $siteColl) {  
+
+
+Q. response.ok is used to check if we get response from rest api
+
+Q. Post Request in SPFX Rest api
+let spOpts = {body: JSON.stringify(camlQueryPayLoad)};  
+this.context.spHttpClient.post(requestUrl, SPHttpClient.configurations.v1, spOpts)  
+    .then((response: SPHttpClientResponse) => {  
+        if (response.ok) {  
+            response.json().then((responseJSON) => {  
+                if (responseJSON!=null && responseJSON.value!=null){  
+                    let items:any[] = responseJSON.value;  
+                }  
+            });  
+        }  
+    });
+
+Q. Azure Automation account will be created under which all runbooks will be running.
+
+Q. Get Current User JSOM
+this.clientContext = new SP.ClientContext.get_current();  
+    this.oWeb = clientContext.get_web();  
+    currentUser = this.oWeb.get_currentUser();  
+    this.clientContext.load(currentUser);  
+    this.clientContext.executeQueryAsync(Function.createDelegate(this,this.onQuerySucceeded),
+
+Q. Office 365 E5 Developer Subscription is created when we create Developer Account in Office 365.
+
