@@ -90,7 +90,7 @@ Ans: I can create web application in Onprem but we can create only site collecti
 85. Observable in limit
 86. List Attachment size in SP list- 250 MB
 87. Versioning limit in modern list and what for library?-500 can go upto 1000
-88. 
+88. How does SharePoint document get stored in SQL db?
 
 
 
