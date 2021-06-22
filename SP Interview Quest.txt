@@ -7,6 +7,13 @@
 6. Site Template in Modern Site.
 7. Modern site header and footer design change, Navigation
 8. What are new template intoduced in Modern site?
+
+Q. Templates avaialable in SP Online?
+SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
+SITE TEMPLATE # 2: COMMUNICATION SITE
+SITE TEMPLATE # 3: TEAM SITE WITHOUT AN OFFICE 365 GROUP
+SITE TEMPLATE # 4: CLASSIC (LEGACY) SITES
+
 9. Community hub in Modern Site?
 10.List View design in Modern Site?
 11.New List template introduced in Modern site?
@@ -14,9 +21,34 @@
 13.Space in Modern Site? - Show image in 3d, audio/video
 14. What have you done in Modern Site?
 15. Change font size in Modern Site?
-16. ULS Logs in SP Online
+    we can create a custom CSS style and inject the CSS on modern pages using SPFx extensions to achieve it.
+    /** A Custom Action which can be run during execution of a Client Side Application */
+   export default class HelloWorldApplicationCustomizer
+  extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
+     @override
+     public onInit(): Promise<void> {
+       const head: any = document.getElementsByTagName("head")[0] || document.documentElement;
+       let customStyle: HTMLLinkElement = document.createElement("link");
+       customStyle.href = this.context.pageContext.site.absoluteUrl+"/SiteAssets/custom.css";
+       customStyle.rel = "stylesheet";
+       customStyle.type = "text/css";
+       head.insertAdjacentElement("beforeEnd", customStyle);
+
+       return Promise.resolve();
+   }
+  }
+    
+16. ULS Logs in SP Online?
 17. Diff between team site and communication site?
 18. What is dictributed cache ervice if deactivated in SP Online?
+   We wouldn't stop this service. SharePoint use it in several ways:
+   User profiles Updates go to cache; all servers then see this update.
+   User authentication No more multiple logons when moving across Web Servers. All logon tokens are cached and reused across the farm.
+   App authentication Caches Open Authorization (OAuth) tokens and prevents a need to return to ACS.
+   Newsfeeds Caches the newsfeed items on team and My Sites.
+   Security trimming Caches the security of newsfeed and profile activities.
+   If you want to improve the speed of your server you may allocate less memory to the DCS using the Windows PowerShell Update-SPDistributedCacheSize cmdlet with the                CachceSizeInMB parameter.
+
 19. Command to get all sitecollection and subsite in any environment.
 20. how many days will site/subsite available after delete?
 21. Overcome List view threshold in SP Online?
@@ -28,7 +60,22 @@
 27. Include Bootstrap and create table/navigation sturucture in spfx.
 28. Error Handling in SPFX? using pnp/logging
 29. Diff between modern site and communication site?
+
 30. Pass parameter from child to parent in react?
+   Parent
+   handleLanguage = (langValue) => {
+        this.setState({language: langValue});
+    }
+    <SelectLanguage onSelectLanguage={this.handleLanguage} />
+    Child
+    handleLangChange = () => {
+        var lang = this.dropdown.value;
+        this.props.onSelectLanguage(lang);            
+    }
+    <DropdownList ref={(ref) => this.dropdown = ref}
+        data={jsonArray} 
+        onChange={this.handleLangChange} />
+        
 31. How to access list just I want to perform crude operation but when navigating to list/content should throw me access denied issue.
 32. React Life cycle method?
 33. Configure search to get record from current site collection?
@@ -37,13 +84,27 @@
 36. Call flow/PowerApps using Powershell. How to trigger fom powershell.
 37. what will happen if we convert from classic to modern in terms of group.
 38. Difference between edit and contribute permisson?
+   Contribute Permissions - View, add, update and delete list items and documents
+   Edit Permissions - View, add, update and delete list items and documents + Add, Edit and delete Lists
+
 39. Error handling in PowerApps?(Cognizant)
+   Error Handling in Canvas Apps Power Apps using IfError
+   First, click on File in Canvas App.
+   Go to Settings -> Advanced Settings.
+   Go to Formula-level error management and enable it.
+   IfError(Patch(Feedbacks,First(Feedbcks), {‘Name’:txtName.Text,’Email’:txtEmail.Text,’Description’:txtDesc.Text,’Rating’:txtRating.Text}),Notify(“Some error occurred while       submitting. Please try again.”))
+   
+Q. For Checking Blank values in PowerApps?
+   If(IsBlank(EditForm1.Error),DisplayMode.Edit,Disabled)
+   
+Q. For notification, Notify("Event Registration Form Submitted Successfully", NotificationType.Success) can be used.
+
 40. Error handling in PowerAutomate?(Cognizant)
 40. How many types of connectors in PowerApps?
 41. External sharing is enabled by default in team but not in communication.
 42. Which will be created first if we have created Modern team site? It will be group/site?(Cognizant)
 42. What will happen if we deleet group of Modern Team site?(Cognizant)
-Ans: Nothing happens even after deleting group as site will not be deleted.
+   Ans: Nothing happens even after deleting group as site will not be deleted.
 43. Call flow from custom button.(Cognizant)
 44. How to create retention policy in Modern Site?(Cognizant)
 45. What is difference in hierarchy you find in SP Online and SP Onprem?(Cognizant).
@@ -60,9 +121,24 @@ Ans: I can create web application in Onprem but we can create only site collecti
 55. Have you worked with External library in SPFX?
 56. Single Page application in SPFX?
 57. What are options in creating extensions in SPFX?
+Application Customizers: Adds scripts to the page, and accesses well-known HTML element placeholders and extends them with custom renderings.
+Field Customizers: Provides modified views to data for fields within a list.
+Command Sets: Extends the SharePoint command surfaces to add new actions, and provides client-side code that you can use to implement behaviors.
+
 58. Modal driven app? How to use? Features?
 59. How to manage SPFX package app for specific user only?
+Q. SharePoint Framework (SPFx) components to be immediately available across the tenant when the solution package is installed to the tenant app catalog. This can be configured    by using the skipFeatureDeployment attribute in the ./config/package-solution.json file.
+
 60. Run with Elevated Priviledges in SPFX?
+   SPFX Solution itself didn't support elevated permission using App-Only authentication, but with MS Flow (Power Automate), it's possible to use app-only elevated permission.
+   App-Only Token and elevated permission is got in MS Flow and in SPFX solution only call the flow using httpClient object.
+   Steps:
+   A user does not have access to SharePoint list has been provided an Interface which is build using SPFx web part.
+   A user makes an HTTP post request via SPFx web part which triggers MS flow.
+   Next consecutive action present in the flow makes a request to ACS to retrieve Access Token.
+   Once Action Token is received as a response another SharePoint REST API call has been performed using this action token.
+   Item is created successfully
+   
 61. Run MS Flow from user account not from service account?
 62. Shallow modification in MS flow without updating time in SP time in list?
 63. Diff between storage limit on OPremise and azure?Nikhil
@@ -78,6 +154,8 @@ Ans: I can create web application in Onprem but we can create only site collecti
 73. How many times ComponentDidMount is called in React? -Aggreya
 74. React Life cycle? -Aggreya
 75. In which class does SPFX class inherits? -Aggreya
+    BaseClientSideWebPart,  Example export default class ClaimsidWebPart extends BaseClientSideWebPart<IClaimsidWebPartProps> {}
+
 76. How many times ComponentDidMount is called in an application? -Aggreya
 77. Which is called first- Constructor or Render? -Aggreya
 78. Display chart in PowerApps from SP List?
@@ -95,12 +173,13 @@ Ans: I can create web application in Onprem but we can create only site collecti
 90. 
 
 
-
 Single Page application in SPFX?
 Impersonation in SPFX?
 What is library in SPFX?
-full width file in SPFX?
-Check if full width is available in Team Site for SPFX?
+Q. full width file in SPFX?
+   GetEmployeeDataWebPart.menifest.json and adds supportsFullBleed property to true.
+   
+Q. Check if full width is available in Team Site for SPFX?
 How to make your powerapp apps responsive?
 Diff between IsBlank() and IsEmpty() in PowerApps?
 What are Azure functions?
@@ -157,7 +236,6 @@ Azure schedudling for PoweShell script.
 Modern Team site Features.
 
 
-
 35. How to check user group in SharePoint PowerShell/PNP?
 
 
@@ -176,7 +254,15 @@ Modern Team site Features.
 47. Difference between SharePoint REST api and Get List Items?
 47. If we can call any method asynchronously then when we require Promise?
 47. Promoted action in SP Online?
+These JavaScript-based actions are displayed as links and include functions such as FOLLOW and SHARE.The PromotedActions delegate control allows us to add additional actions, but does not replace the existing actions.
+
 47. What are all delegate functions in PowerApps?
+Delegation in Power Apps means process of retrieving data to the data source itself. This means Power Apps will retrieve small amount of data to make sure the performance is consistent.PowerApps enables the delegation of some operations to compatible data source called delegable functions.
+Filter functions like Filter, LookUp and Search.
+Sorting functions like Sort and SoryByColumns
+Aggregating functions like Sum, Average, Min and Max
+Table shaping functions like AddColumns, DropColumns, RenameColumns, and ShowColumns partially support delegation.
+
 47. Cross site publishing?
 47. Set State and force update diff?
 48. How many result we get feom GET data from SQL?
@@ -184,11 +270,7 @@ Modern Team site Features.
 50. Rest api date field comparision?
 51. What are ways to create synchronous event in SPOnline like event handlers?
 
-
-
-
 where to initialise component
-
 
 //PowerApps Virtusa
 48. What are types of variables in PowerApps?
@@ -219,9 +301,6 @@ People Picker control in SPFX?
 We need to install to use People Picker field
 npm install @pnp/spfx-controls-react 
 
-
-
-
 How many records we get in get rows in MSFlow?
 "@length(body('Get_rows')?['value'])".2048 is default limit in Get rows.
 In the SQL Get_rows part of my flow, I went to the 3 dots and Settings. I forced PAGINATION to ON and set to max 5000. 
@@ -238,18 +317,15 @@ I am now getting all of my content to pull.
 59. Office UI Fabric usage?
 60. Required field validation and error handling?
 61. How to add custom field property Panel in SPFX?
+    getPropertyPaneConfiguration
+
 62. Hoe components can communicate each other in react?
 63. How do I handle long running scripts in SPFX?
 64. 
 
 
-
-
 //REACT
 Form Validation in React
-
-
-
 
 //Inject Custom CSS
 https://tahoeninjas.blog/2018/05/08/inject-custom-css-on-sharepoint-modern-pages-using-spfx-extensions/
