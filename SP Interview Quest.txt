@@ -14,6 +14,8 @@ SITE TEMPLATE # 2: COMMUNICATION SITE
 SITE TEMPLATE # 3: TEAM SITE WITHOUT AN OFFICE 365 GROUP
 SITE TEMPLATE # 4: CLASSIC (LEGACY) SITES
 
+Q. In order to check the version, we can use npm ls -g --depth=0 but if specific to SPFX soltion can use npm ls -g --depth=0 @microsoft/generator-sharepoint
+
 9. Community hub in Modern Site?
 10.List View design in Modern Site?
 11.New List template introduced in Modern site?
@@ -170,7 +172,11 @@ Q. SharePoint Framework (SPFx) components to be immediately available across the
 87. Versioning limit in modern list and what for library?-500 can go upto 1000
 88. How does SharePoint document get stored in SQL db?
 89. Can componentDidMount be called multiple times in SPFX/React?
-90. 
+90. Read and View Diff?
+    Read
+    Can view pages and list items and download documents.
+    View Only
+    Can view pages, list items, and documents. Document types with server-side file handlers can be viewed in the browser but not downloaded.
 
 
 Single Page application in SPFX?
