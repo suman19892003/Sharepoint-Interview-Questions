@@ -14,6 +14,13 @@ SITE TEMPLATE # 2: COMMUNICATION SITE
 SITE TEMPLATE # 3: TEAM SITE WITHOUT AN OFFICE 365 GROUP
 SITE TEMPLATE # 4: CLASSIC (LEGACY) SITES
 
+Q.EAS Technology
+How to show PowerApps solution to office?
+Azure SQL server connection with PowerApps how to use?
+PowerApps How to do localization(german,Hindi,English)
+Create Rersponsive powerApps?
+SPBatch command in SPFX?
+
 Q. In order to check the version, we can use npm ls -g --depth=0 but if specific to SPFX soltion can use npm ls -g --depth=0 @microsoft/generator-sharepoint
 Q. A retention policy specifies that a document will be deleted a certain amount of time after it has been created or modified. When you apply a retention policy to a SharePoint    site, it will apply to all documents — even those that were created before the policy was applied.
 9. Community hub in Modern Site?
