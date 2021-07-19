@@ -185,6 +185,12 @@ Q. SharePoint Framework (SPFx) components to be immediately available across the
     View Only
     Can view pages, list items, and documents. Document types with server-side file handlers can be viewed in the browser but not downloaded.
 
+//Nikhil Questions
+Out of box webpart in modern?
+add vertical in modern search?
+offline capability in powerapps?
+Business process workflow in PowerApps?
+How you will create dynamic controls in PowerApps?
 
 Single Page application in SPFX?
 Impersonation in SPFX?
