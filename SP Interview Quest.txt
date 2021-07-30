@@ -315,6 +315,10 @@ spfx architecutre?
 Customized Search in SPFX?
 Microsoft Search Configure?
 
+How you will create Teams Webpart?
+If my instances are running and I stopped the flow, what will happen to those flow?
+How to capture running instances of worklow if we want to migrate?
+How to create function to create datasource in PowerApps?
 
 People Picker control in SPFX?
 We need to install to use People Picker field
