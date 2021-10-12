@@ -256,6 +256,8 @@ Modern Team site Features.
 
 
 35. How to check user group in SharePoint PowerShell/PNP?
+36. What is difference between Package.json and Package-lock.json?
+37. What is difference between arrow function and normal function in React?
 
 
 36. Diff between Microsoft365 and Security group?
