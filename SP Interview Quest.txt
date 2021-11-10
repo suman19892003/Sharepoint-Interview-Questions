@@ -876,6 +876,66 @@ this.clientContext = new SP.ClientContext.get_current();
     currentUser = this.oWeb.get_currentUser();  
     this.clientContext.load(currentUser);  
     this.clientContext.executeQueryAsync(Function.createDelegate(this,this.onQuerySucceeded),
+    
+Q. Yaml Pipeline structure(It contains multiple stages and tasks as follows)
+YAML Pipeline > Stages > Jobs > Script/Task
+Every Jobs require an Microsoft Hosted Agent or self hosted Agent(VM).
 
+Q. Pipeline Stages:
+A pipeline is made of one or more stages. A stage is way of organising jobs in a pipeline and each stage can have one or more jobs.
+Stages:
+-stage:string #name of the stage
+ displayname: string
+ dependsOn: string
+ condition: string
+ pool: string
+ variable: string
+ jobs: [job]
+ 
+ Q. Jobs: A jobs in Pipeline is a collection of one or more steps.
+ jobs:
+ -Job:string
+ displayname:string
+ condition:string
+ variables:strin
+ steps:[script|powershell|task|templatereference]
+ Example:
+ Jobs:
+ -Job:Debug
+   Steps:
+   -script:echo hello world from debug
+ -Job:Release
+   DependsOn:Debug
+   Steps:
+    -script:echo hello world from Release
+    
+ 
+Q. Agents:
+ Each jobs inside an azure pipeline is executed on an agent. An agent is an installable software that runs one job at a time.
+ There are two types of agents:
+ -Self Hosted- Owned and managed by you. Gives you more control to install dependant packages for build and packages.
+ -Microsoft Hosted- MS provides fresh VM every time a job needs to run.
+ 
+Q. Templates: It lets you define reusable content, logic and parameters.
+--Defining a custom template
+#File :simple-param.yml
+parameters:
+    -name:yesNo #name of parameter to be used in other file
+    type:boolean
+    default:false
+    
+    steps:
+    -script:echo ${{parameters.yesNo}}
+
+--Using a custom template defined earlier
+#File :azure-pipeline.yml
+trigger:
+ -master
+ 
+extends:
+ template: simple-param.yml
+ parameters:
+    yesNo:true #setting up the parameter value defined earlier
+ 
 Q. Office 365 E5 Developer Subscription is created when we create Developer Account in Office 365.
 
