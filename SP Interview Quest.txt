@@ -939,3 +939,18 @@ extends:
  
 Q. Office 365 E5 Developer Subscription is created when we create Developer Account in Office 365.
 
+Q. SP Batch Command in SharePoint?
+We can create Batch command and tag multiple request as series inside wrapper.
+
+  const list = sp.web.lists.getByTitle('MyCustomList');
+  const ent = await list.getListItemEntityTypeFullName();
+  const batch = pnp.sp.web.createBatch();
+  const items = list.items.inBatch(batch);
+
+  items.add({ Title: 'Item 1' }, ent).catch(console.warn);
+  items.add({ Title: 'Item 2' }, ent).catch(console.warn);
+
+  await batch.execute();
+  console.log('Done');
+  
+Q. 
