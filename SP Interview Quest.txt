@@ -291,9 +291,70 @@ Table shaping functions like AddColumns, DropColumns, RenameColumns, and ShowCol
 48. How many result we get feom GET data from SQL?
 49. Add custom button in list view SPFX?
 50. Rest api date field comparision?
-51. What are ways to create synchronous event in SPOnline like event handlers?
 
-where to initialise component
+
+51. What are ways to create synchronous event in SPOnline like event handlers?
+First Approach would be to create Azure function and attach to list
+Second Approach is to create SharePoint Addins as mentioned below.
+You can create provider hosted app to attach remote event receivers to artifacts in app web.
+a. create provider hosted app . In the app web project add a list instance based on Contacts list definition
+b. Now, if you right click on the Contacts list instance, you can add a Remote Event Receiver
+c. You can add List events such as field added, or list deleted etc.
+d. Once you click on Finish, visual studio will create and wire up the required web service end points. Notice that the remote endpoint is added to the remote web project. The list elements.xml will have the receiver information.
+e. Based on the options selected, it will add two methods one is ProcessEvent which is a before event and the other is ProcessOneWayEvent which is an after event.
+f. You can use the CSOM to make any changes in the event handler such as:
+public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
+{
+  SPRemoteEventResult result = new SPRemoteEventResult();
+  if(properties.EventType == SPRemoteEventType.ItemAdding)
+  {
+     string firstName = Convert.ToString(properties.ItemEventProperties.AfterProperties["FirstName"]).ToLower();
+     if (firstName.Contains("prashanth"))
+     {
+       result.Status = SPRemoteEventServiceStatus.CancelWithError;
+       result.ErrorMessage = "My name already exists!";
+     }
+
+     result.ChangedItemProperties.Add("FirstName", firstName.ToUpper());
+  }
+  using (ClientContext clientContext = TokenHelper.CreateRemoteEventReceiverClientContext(properties))
+  {
+    if (clientContext != null)
+    {
+      clientContext.Load(clientContext.Web);
+      //do something
+      clientContext.ExecuteQuery();
+    }
+  }
+
+  return result;
+}
+
+public void ProcessOneWayEvent(SPRemoteEventProperties properties)
+{
+  if (properties.EventType == SPRemoteEventType.ItemAdded)
+  {
+    string firstName = Convert.ToString(properties.ItemEventProperties.AfterProperties["FirstName"]);
+    int listItemId = properties.ItemEventProperties.ListItemId;
+    Guid listId = properties.ItemEventProperties.ListId;
+    using (ClientContext clientContext = TokenHelper.CreateRemoteEventReceiverClientContext(properties))
+    {
+      if (clientContext != null)
+      {
+        Web web = clientContext.Web;
+        SP.List list = web.Lists.GetById(listId);
+        SP.ListItem item = list.GetItemById(listItemId);
+
+        item["FirstNamePhonetic"] = firstName + " Phonetic";
+        item.Update();
+        clientContext.ExecuteQuery();
+      }
+     }
+   }
+   Note : When we try to debug the project, we’ll get a message that we cannot debug the remote event handler.To enable debugging, we can use the windows powershell window.
+   New-AzureSBNamespace -Name <uniquenamespace>
+
+Q. where to initialise component
 
 //PowerApps Virtusa
 48. What are types of variables in PowerApps?
