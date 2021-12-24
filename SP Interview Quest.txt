@@ -46,7 +46,23 @@ Q. A retention policy specifies that a document will be deleted a certain amount
        return Promise.resolve();
    }
   }
+  
+Q. Impact of giving end users provision to create a Team in MS Teams has a flow-on effect:
+It creates an Office 365 Group with an associated SharePoint site
+It creates an Exchange mailbox
+It will (initially, unless this is changed) make the SharePoint site inaccessible to records managers.
+It gets complicated if it is decided to delete the Team, SharePoint site, or Office 365 Group.
+Note: It is recommended, in organisations rolling out MS Teams to end users, that the ability to create Office 365 Groups is disabled except for Global Admins
+
+Q. How do I disconnect a SharePoint site from Office 365 group?
+To delete a SharePoint site in Office 365, go to Settings>Site information. This will bring up an information panel with the option Delete site. If you are deleting a team site, then you will need to confirm that you want to delete the Office 365 group and the associated site. Then you click Delete and confirm.
     
+Q. Difference between Teams and Channel?
+When a Team is provisioned, a SharePoint site collection and Office 365 Group are created. Users have membership to this group, which allows them access to the SharePoint site collection. Think of SharePoint as a home and Office 365 Groups as the keys that unlock that house. In this analogy, channels would be the rooms in the home.
+At the time of creating Team, it provides you option to create Public/Private Teams. Same applies with Channel it also provides you feature for public/private.
+
+
+
 16. ULS Logs in SP Online?
 17. Diff between team site and communication site?
 18. What is dictributed cache ervice if deactivated in SP Online?
@@ -183,7 +199,22 @@ By default, a React component will only call componentDidMount once. The only wa
 86. List Attachment size in SP list- 250 MB
 87. Versioning limit in modern list and what for library?-500 can go upto 1000
 88. How does SharePoint document get stored in SQL db?
+
 89. Can componentDidMount be called multiple times in SPFX/React?
+Actually ComponentDidMount() run once but it can run mutiple times.
+componentDidMount() runs after the initial render only once
+componentDidMount() may run multiple times if the component key prop value keeps changing
+<ChildComp key={this.state.num} number={this.state.num} />
+When you click the increment button, you will see following o/p. The child component's componentDidMount gets called again, if the state value of num changes in parent.
+render() lifecycle 
+componentDidMount() lifecycle 
+render() lifecycle 
+componentDidMount() lifecycle
+You can either place your data fetch calls on an event listener, such as click. Or if you need to grab initial data when the component mounts, do it inside the componentDidMount() method.
+Other lifecycles like, componentDidUpdate(), componentWillMount(), render(), can be triggered multiple times.
+    
+    
+
 90. Read and View Diff?
     Read
     Can view pages and list items and download documents.
