@@ -162,7 +162,10 @@ Q. SharePoint Framework (SPFx) components to be immediately available across the
 70. How to pass Props back to Parent from child? -Aggreya
 71. High order component and stateless component diff? -Aggreya
 72. Lifecycle React? -Aggreya
+
 73. How many times ComponentDidMount is called in React? -Aggreya
+By default, a React component will only call componentDidMount once. The only way it will get run again is if you delete the component or change the key prop value.
+
 74. React Life cycle? -Aggreya
 75. In which class does SPFX class inherits? -Aggreya
     BaseClientSideWebPart,  Example export default class ClaimsidWebPart extends BaseClientSideWebPart<IClaimsidWebPartProps> {}
