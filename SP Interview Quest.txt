@@ -156,6 +156,10 @@ Command Sets: Extends the SharePoint command surfaces to add new actions, and pr
 59. How to manage SPFX package app for specific user only?
 Q. SharePoint Framework (SPFx) components to be immediately available across the tenant when the solution package is installed to the tenant app catalog. This can be configured    by using the skipFeatureDeployment attribute in the ./config/package-solution.json file.
 
+Q. A user fills a form in a spfx webpart. I have to create an item in a list for this Metadata. What I would like to do is achieve this, but restrict the user from directly accessing/modifying items within the same list. But in client side web parts, code is able to do what user is able to do. Any suggestions how I could achieve impersonation and modify the list without providing user with the access to the list?
+Both SharePoint Framework Extensions and user custom action or ECB menu item solutions run in the browser and can contain only client-side JavaScript code. Client-side solutions have a number of limitations, such as not being able to elevate permissions in SharePoint or reach out to external APIs that don't support cross-origin communication (CORS) or authentication using OAuth implicit flow. In such cases, the client-side solution could leverage a remote server-side API to perform the necessary operation and return the results to the client.
+So, the option in this case is APP registration, and can add the scope of where only Admin ou User can access the application context.
+
 60. Run with Elevated Priviledges in SPFX?
    SPFX Solution itself didn't support elevated permission using App-Only authentication, but with MS Flow (Power Automate), it's possible to use app-only elevated permission.
    App-Only Token and elevated permission is got in MS Flow and in SPFX solution only call the flow using httpClient object.
