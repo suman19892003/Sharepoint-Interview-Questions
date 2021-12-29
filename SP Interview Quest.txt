@@ -1048,4 +1048,13 @@ We can create Batch command and tag multiple request as series inside wrapper.
   await batch.execute();
   console.log('Done');
   
+Q. Apply Top and order By in SPFX PNP
+// get a specific item by id.
+const item: any = await sp.web.lists.getByTitle("My List").items.getById(1).get();
+console.log(item);
+
+// use odata operators for more efficient queries
+const items2: any[] = await sp.web.lists.getByTitle("My List").items.select("Title", "Description").top(5).orderBy("Modified", false).get();//latest on top
+console.log(items2);
+
 Q. 
