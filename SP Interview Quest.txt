@@ -61,9 +61,9 @@ Q. Difference between Teams and Channel?
 When a Team is provisioned, a SharePoint site collection and Office 365 Group are created. Users have membership to this group, which allows them access to the SharePoint site collection. Think of SharePoint as a home and Office 365 Groups as the keys that unlock that house. In this analogy, channels would be the rooms in the home.
 At the time of creating Team, it provides you option to create Public/Private Teams. Same applies with Channel it also provides you feature for public/private.
 
-
-
 16. ULS Logs in SP Online?
+There is no way to do it anymore in SP Online. The answers above may have worked previously, but Microsoft changed that so you need to contact them to get the required information.
+
 17. Diff between team site and communication site?
 18. What is dictributed cache ervice if deactivated in SP Online?
    We wouldn't stop this service. SharePoint use it in several ways:
@@ -128,12 +128,25 @@ Q. For notification, Notify("Event Registration Form Submitted Successfully", No
 
 40. Error handling in PowerAutomate?(Cognizant)
 40. How many types of connectors in PowerApps?
+    Power Apps and Power Automate have access to two types of connectors: standard and premium.
+    
 41. External sharing is enabled by default in team but not in communication.
 42. Which will be created first if we have created Modern team site? It will be group/site?(Cognizant)
 42. What will happen if we deleet group of Modern Team site?(Cognizant)
    Ans: Nothing happens even after deleting group as site will not be deleted.
+
+What happens to the SharePoint site when you delete a team?
+Deleting a team removes the team mailbox and calendar from Exchange. The corresponding SharePoint site and all its files will also be deleted. And any OneNote notebook, Planner plan, PowerBI workspace, or Stream group affiliated with the team will also be deleted.
+
 43. Call flow from custom button.(Cognizant)
+
 44. How to create retention policy in Modern Site?(Cognizant)
+a. Log in to Office 365 with your global administrator account. Browse to the Security & Compliance Center, then select Data Management > Retention. > Create
+b. On the next screen is where you set up the logic. You can configure how many days, months, or years to retain the content for, specify whether you want the math (retention period) to be calculated from the Created Date or Last Modified Date. Lastly, you can also specify whether you want to keep or delete content after the Retention period expires. Hit Next
+c. Next you get to choose where to apply the policy. You can apply it to email (Exchange), SharePoint sites, OneDrive accounts as well as Office 365 Groups.
+It can be applied for automatic deleting/moving SP document after particular period. Or can be applied on Site if some one is trying to delete the site.
+
+
 45. What is difference in hierarchy you find in SP Online and SP Onprem?(Cognizant).
 Ans: I can create web application in Onprem but we can create only site collection in Online.
 46. Create custom button in ribbon and action in modern list view?
