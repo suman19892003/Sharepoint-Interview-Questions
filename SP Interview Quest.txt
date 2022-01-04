@@ -47,6 +47,25 @@ Q. A retention policy specifies that a document will be deleted a certain amount
    }
   }
   
+Q. What all attributes are returned by currentUser context in SPFX PNP?
+sp.web.currentUser.get().then((CurrentUser) => { console.log(CurrentUser.Title)})
+
+Email: string;
+Id: number;
+IsHiddenInUI: boolean;
+IsShareByEmailGuestUser: boolean;
+IsSiteAdmin: boolean;
+LoginName: string;
+PrincipalType: number;
+Title: string;
+
+Q. How to get current Users group?
+sp.web.currentUser.groups.get().then((r: any) => { //It will return array
+   r.forEach((grp) =>{  
+     grpNames += "<li>"+grp["Title"]+"</li>"
+   }); 
+})
+
 Q. Impact of giving end users provision to create a Team in MS Teams has a flow-on effect:
 It creates an Office 365 Group with an associated SharePoint site
 It creates an Exchange mailbox
