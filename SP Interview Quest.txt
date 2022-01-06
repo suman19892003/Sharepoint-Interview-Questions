@@ -107,6 +107,12 @@ There is no way to do it anymore in SP Online. The answers above may have worked
 30. How to get SharePoint Usage Report in SharePoint Online?
 To get site reports, we can use "Site Usage" which we can get on click of gear icon, below Site Contenets. It provides graphs and count of total visit of the site for duration of 7/30/90 days. It is avaialble by default on menu action of gear icon. No any feature activation is required.
 
+Q. How to call one Azure Function inside another Azure Function?
+
+Q. How to pass parameter and send back values in AZ function?
+
+Q. What is the use of New-PnPUPABulkImportJob?
+
 30. Pass parameter from child to parent in react?
    Parent
    handleLanguage = (langValue) => {
