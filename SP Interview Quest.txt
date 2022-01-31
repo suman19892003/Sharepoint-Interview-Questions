@@ -94,8 +94,70 @@ There is no way to do it anymore in SP Online. The answers above may have worked
    If you want to improve the speed of your server you may allocate less memory to the DCS using the Windows PowerShell Update-SPDistributedCacheSize cmdlet with the                CachceSizeInMB parameter.
 
 19. Command to get all sitecollection and subsite in any environment.
+
+#Set Variables
+$SiteURL = "https://crescent.sharepoint.com/"
+ 
+#Get Credentials to connect
+$Cred = Get-Credential
+ 
+Try {
+    #Connect to PnP Online
+    Connect-PnPOnline -Url $SiteURL -Credentials $Cred
+ 
+    #Get All Site collections 
+    $SitesCollection = Get-PnPTenantSite
+ 
+    #Loop through each site collection
+    ForEach($Site in $SitesCollection) 
+    { 
+        Write-host -F Green $Site.Url 
+        Try {
+            #Connect to site collection
+            Connect-PnPOnline -Url $Site.Url -Credentials $Cred
+ 
+            #Get Site Collection administrators of the site
+            $SubSites = Get-PnPSubWeb -Recurse
+            ForEach ($web in $SubSites)
+            {
+                Write-host `t $Web.URL
+            }
+        }
+        Catch {
+            write-host -f Red "`tError:" $_.Exception.Message
+        }
+    }
+}
+Catch {
+    write-host -f Red "Error:" $_.Exception.Message
+}
+
 20. how many days will site/subsite available after delete?
+When you, as a global or SharePoint admin in Microsoft 365, delete a site (previously called a "site collection"), it's retained as a deleted site for 93 days.
+Deleting these sites will delete the group and all its resources, including the Outlook mailbox and calendar, and any Teams channels.
+Deleted Microsoft 365 groups are retained for only 30 days.
+To reuse a URL from a deleted site (recreate a site), you need to permanently delete the site. After the site is permanently deleted, it might take up to 24 hours for the URL to become available.
+deleting a site by using PowerShell, see Remove-SPOSite.
+To permanently delete sites (including Microsoft 365 group-connected team sites) by using PowerShell,
+Remove-SPODeletedSite -Identity https://contoso.sharepoint.com/sites/sitetoremove
+
+Q. Manage large lists and libraries in SP Online?
+You can store up to 30 million items or files in a list or library. Filtered views of large lists have a similar experience to other lists. However, when a list view shows more than 5000 items, you may run into a list view threshold error.
+
 21. Overcome List view threshold in SP Online?
+Edit the list view
+If an error occurs when working with a large list, edit your list view.
+The following four changes remove list view threshold errors. Make all four changes to remove all the errors.
+a. Remove sorting for the list view
+from both First sort by the column and Then sort by the column,select None.
+Note: Columns with column types like people, lookup, or managed metadata can cause list view threshold errors when sorting. However, you can use text, number, date, and other column types in the first sort.
+b. Remove grouping in edit view
+From both First group by the column and Then group by the column,select None.
+Other edits for the list view
+c. For all columns in the Totals section, select None.
+d. From the Columns section, clear all but one column for display.
+Note: Displaying 12 or more columns of the following types can cause a list view threshold error: people, lookup, and managed metadata. Displaying columns of other types will not. 
+
 22. Event Handlers in SP Oline? How we can achieve?
 23. DCS Feature in SP Online?
 24. Diff between Infopath and PowerApps
