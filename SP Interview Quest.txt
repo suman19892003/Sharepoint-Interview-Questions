@@ -932,6 +932,10 @@ Now we can accessing the Provider withing Consumer tags
              {(context) => (
               <p>{context.state.message}}</p>)}
             </Mcontext.Consumer>
+            
+Q. Read Multiline Rich TextBox value from SharePoint list in React?
+<div dangerouslySetInnerHTML={{__html: this.state.multilineFieldVale}} />;
+It will Get Enriched MultiLineText Field value without loosing its HTML property and Display it without html tag
 
 Q. React Life cycle method?
 Mounting:These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
