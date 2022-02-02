@@ -169,11 +169,45 @@ Note: Displaying 12 or more columns of the following types can cause a list view
 30. How to get SharePoint Usage Report in SharePoint Online?
 To get site reports, we can use "Site Usage" which we can get on click of gear icon, below Site Contenets. It provides graphs and count of total visit of the site for duration of 7/30/90 days. It is avaialble by default on menu action of gear icon. No any feature activation is required.
 
+Q. Page Layout In SharePoint Online
+Modern SharePoint pages can be configured with three different page layouts as,
+Home Page Layout
+Article Page Layout
+Single Part App Page Layout
+Home Page Layout
+    Used by default on the site home page
+    Used in the landing page of a modern site
+    Page layout without the top-banner section (page title and header image)
+Article Page Layout
+    Used by default on the modern pages
+    Page with the top-banner section
+Single Part App Page Layout
+    The page where the top-banner section is hidden
+    Cannot be edited by end-users using browser (Command bar is hidden)
+    Supports hosting only a single web part or Microsoft Teams application
+Below is the PNP PowerShell script to change the Page Layout,
+$SiteURL = "https://crescent.sharepoint.com/sites/knowledgehub"
+$PageName = "Home.aspx"
+$PageLayout = "Article" #Home, Article, SingleWebPartApp
+ 
+#Connect to PnP Online
+Connect-PnPOnline -Url $SiteURL -Interactive
+ 
+#Set the Page Layout
+Set-PnPPage -Identity $PageName -LayoutType $PageLayout
+If you are using the Legacy PnP PowerShell module, use “Set-PnPClientSidePage” instead of “Set-PnPPage” cmdlet in the above script. My home page layout changed to an Article page with a banner:
+
+
 Q. How to call one Azure Function inside another Azure Function?
 
 Q. How to pass parameter and send back values in AZ function?
 
 Q. What is the use of New-PnPUPABulkImportJob?
+It extracts mapped properties from Azure AD to a JSON file format and then kicks off the profile properties import job to update user profile attributes from the JSON.
+The bulk update user profile properties API is more efficient, especially when dealing with thousands of profiles Bulk update custom user profile properties for SharePoint Online
+New-PnPUPABulkImportJob -Url "https://{tenant}.sharepoint.com/Shared Documents/profiles.json" -IdProperty "IdName" -UserProfilePropertyMapping @{"Department"="Department"}
+This will submit a new user profile bulk import job to SharePoint Online using an already uploaded file.
+
 
 30. Pass parameter from child to parent in react?
    Parent
