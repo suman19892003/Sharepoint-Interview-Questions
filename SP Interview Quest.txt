@@ -8,6 +8,8 @@
 7. Modern site header and footer design change, Navigation
 8. What are new template intoduced in Modern site?
 
+Q. Pass value from one child component to another child component?
+
 Q. Templates avaialable in SP Online?
 SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
 SITE TEMPLATE # 2: COMMUNICATION SITE
