@@ -1201,4 +1201,89 @@ console.log(item);
 const items2: any[] = await sp.web.lists.getByTitle("My List").items.select("Title", "Description").top(5).orderBy("Modified", false).get();//latest on top
 console.log(items2);
 
+Q. Search Api and Rest API in SharePoint
+Selecting all items, all columns
+/_api/web/lists/getbytitle('listname')/Items?$select=*
+Note that I said “almost”, because SharePoint’s REST API doesn’t really bring back everything. Things such as author information and values of lookups have to be queried differently (more on this below).
+
+Getting the total items in a list
+/_api/web/lists/getbytitle('listName')/ItemCount
+
+Retrieving specific list items
+/_api/web/lists/getbytitle('listname')/items(4)
+or
+/_api/web/lists/getbytitle('listname')/Items?$select=Title&$filter=Title eq 'example 1'
+
+Multiple or filter values
+/_api/web/lists/getbytitle('listname')/Items?$select=Title&$filter=((Title eq 'example 1') or (Title eq 'example 2'))
+
+Multiple or/And filter
+/_api/web/lists/getbytitle('ListName')/Items?$&$select=Title&$filter=((ContentType eq 'Operating Policy') or (ContentType eq 'Procedure')) and (Subject eq 'Safety')
+
+Using “startswith()” and “substringof()” functions with $filter
+At times you need a more powerful filter in SharePoint REST API. See “eq” will only retrieve exact matches. If you want to get everything that starts with “test”, you use the “startswith()” function:
+
+/_api/web/lists/getbytitle('ListName')/Items?$filter=((startswith(column,'test')))
+
+if you want to get items that “contains” specific characters, you use the “substringof()” function.
+/_api/web/lists/getbytitle('ListName')/Items?$filter=((substringof('test',column)))
+
+The $top parameter basically limits your items to a specified number.
+/_api/web/lists/getbytitle('listname')/Items?$select=Title&$top=10
+
+Offsetting results
+/_api/web/lists/getbytitle('listname')/Items?$top='10'&$skip='20'
+
+Getting the Author Information
+/_api/web/lists/getbytitle('listname')/Items?$select=Author/Title,Comment&$expand=Author/Title
+
+Document Libraries
+/_api/web/lists/getbytitle('Document Library Name')/Items?$select=Title,FileLeafRef,EncodedAbsThumbnailUrl,EncodedAbsUrl
+The example above returns information about your file such as the name, full url and the internal “Title”
+
+For instances where you want to know the “type” of document library it is (example Picture Library vs Document Library), use:
+/_api/web/lists/getbytitle('Document Library Name')/BaseTemplate
+
+To Get items inside subfolder
+/_api/web/GetFolderByServerRelativeUrl('"ParentFolder Name/sub Folder"')/Files
+
+Getting Current User information
+/_api/SP.UserProfiles.PeopleManager/GetMyProperties
+or
+/_api/web/currentUser
+
+Getting Current User Groups
+/_api/web/GetUserById('"+ userId +"')/Groups
+
+SharePoint Search API
+/_api/search/query?querytext='"+ TERM +"'
+The results are buried under: data.d.query.PrimaryQueryResult.RelevantResults.Table.Rows.results
+
+Selecting specific Properties
+/_api/search/query?querytext='"+ TERM +"'&selectproperties='Title,Path,FileExtension,IsContainer'
+
+Offsetting Results (for paging)
+For instances where you want to return the set of rows that starts from a specific number:
+/_api/search/query?querytext='"+ TERM +"'&startrow=10
+
+Limiting Results
+You don’t want to return everything! You simply want to limit your search:
+/_api/search/query?querytext='"+ TERM +"'&rowlimit=25
+
+Only Results from a Specific List or Document Library
+/_api/search/query?querytext='"+ TERM +"'&sourceid='YOUR-LIST-ID'
+
+Filtering Results
+Sometimes you don’t want the whole resultset to comeback. This is where filtering comes in. SharePoint Search API has “refinement filters” which does the job.
+/_api/search/query?querytext='TERM'&refinementfilters='(FIELD:string("FILTERTERM", mode="phrase")'
+The above will search for “TERM”, filtered with the “FILTERTERM”  in the field called “FIELD”.
+
+Filtering Results in Multiple Fields
+So now we need to filter by many fields. Yes it’s possible, and we still use “refinement filters” in the Search API.
+/_api/search/query?querytext='TERM'&refinementfilters='and(COL1:string("COL1TERM", mode="phrase"),COL2:string("COL2TERM", mode="phrase"))'
+Just like the single filter, but instead we add “and” in the beginning (you can also use “or”), plus separating the columns and terms with a comma.
+
+Sorting Results
+/_api/search/query?querytext='TERM'&sortlist='LastName:ascending,FirstName:ascending'
+
 Q. 
