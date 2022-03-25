@@ -3,3 +3,5 @@ You typically use delegated permissions when you want to call the Web API as the
 Application permissions are used when the application calls the API as itself. For example to get the weather forecast for a certain zipcode (it does not matter which user is logged on). The client can even call the API when there's no user present (some background service calling the API to update some status).
 
 Q. Is there any limitation on the data that we can bind to the drop down in PowerApps?
+
+Q. What is invariant error in React?
