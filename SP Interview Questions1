@@ -5,3 +5,9 @@ Application permissions are used when the application calls the API as itself. F
 Q. Is there any limitation on the data that we can bind to the drop down in PowerApps?
 
 Q. What is invariant error in React?
+
+Q. Display User image in SPFX Solution?
+  const avatar = `${webUrl}/_layouts/15/userphoto.aspx?size=L&username=${email}`
+  <img src={avatar} />
+  
+Q. 
