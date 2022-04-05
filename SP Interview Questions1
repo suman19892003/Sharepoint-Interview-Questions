@@ -10,4 +10,7 @@ Q. Display User image in SPFX Solution?
   const avatar = `${webUrl}/_layouts/15/userphoto.aspx?size=L&username=${email}`
   <img src={avatar} />
   
+Q. Set default Image if no image available?
+  <img src={imagePath} onError={e=>{(e.target as any).src = defaultimg;}} alt='user photo'></img>
+  
 Q. 
