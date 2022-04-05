@@ -13,4 +13,6 @@ Q. Display User image in SPFX Solution?
 Q. Set default Image if no image available?
   <img src={imagePath} onError={e=>{(e.target as any).src = defaultimg;}} alt='user photo'></img>
   
+Q. How we can configure the outlook email to be trigerred from person who raised not from common account?
+
 Q. 
