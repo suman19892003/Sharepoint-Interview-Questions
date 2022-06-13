@@ -1,0 +1,18 @@
+Classic Vs. Modern SharePoint: What's The Difference?
+Usability
+In SharePoint Modern, common tasks such as copying and moving. items, grouping and filtering, can be accomplished seamlessly. 
+For example, the Modern “Copy to” and “Move to” features allow you to quickly copy and move files and folders across multiple sites.
+Modern sites are integrated with Office 365 Groups (and the associated features of O365 Groups).It is also important to note that creating, navigating and using a Modern team site is faster and more responsive than a Classic Team site.
+Traditional Classic Publishing site is not easily created nor maintained, usually requiring significant developer intervention, and is not mobile responsive. 
+Publishing sites do not exist on the Modern platform, instead they are replaced by Communication sites.
+Design
+You can choose from three site designs when creating a Modern Communication site. Each design has a different purpose and allows for a varying level of flexibility.
+Topic – for sharing news, events and other topics.
+Showcase – for sharing information using photos.
+Blank – for creating your own design.
+Search
+Two types of search experience are available in SharePoint. Modern sites have the Microsoft Search experience, while Classic sites offers a legacy classic search experience.
+When you perform a search in a Modern site using Microsoft Search, the results are personalised based on your preferences and recent activity. You will also see recommended search results as you type, based on your personal history, which make the process of finding the documents, resources and information cleaner and faster. 
+The Classic search experience, whilst it is more customisable, is more limited in scope and lacks key features, such in-line search.
+Hub Sites And Sites Collections
+Both Hub Sites and Site Collections are a collection (group) of sites that are common. You can group your SharePoint sites based on department, location, project, etc. The sites within a Hub Site or a Site Collection can share common settings like navigation and branding. Users can also search for content across all connected sites.
