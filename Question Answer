@@ -14,5 +14,13 @@ Search
 Two types of search experience are available in SharePoint. Modern sites have the Microsoft Search experience, while Classic sites offers a legacy classic search experience.
 When you perform a search in a Modern site using Microsoft Search, the results are personalised based on your preferences and recent activity. You will also see recommended search results as you type, based on your personal history, which make the process of finding the documents, resources and information cleaner and faster. 
 The Classic search experience, whilst it is more customisable, is more limited in scope and lacks key features, such in-line search.
-Hub Sites And Sites Collections
+Hub Sites And Sites Collections?
+Hub Site is collection of multiple site connected to have common navigation, common news and documents. Also it will search based on all connected sites under hub site. An organisations can have maxximum 2000 hub sites.
+Create Coomunication site from Admin Center > Click on regiaster as new hub Site> You can create another site collection in admin center > Assosciate to an exixting hub site.
 Both Hub Sites and Site Collections are a collection (group) of sites that are common. You can group your SharePoint sites based on department, location, project, etc. The sites within a Hub Site or a Site Collection can share common settings like navigation and branding. Users can also search for content across all connected sites.
+Change Search Vertical in SP Online?
+Serach Vertical can be configured in 2 level at Global Admin level and Site Collection level
+Site Collection level:
+Navigate to  Site Settings > Microsoft Search > Search Configuration> Vertical> Add Vertical > Query can be written as filetype:PDF > Next and Finish
+Global Admin Level
+It need to be done at SharePoint Admin > All amin center> Search & Intelligence > Add Verticals
