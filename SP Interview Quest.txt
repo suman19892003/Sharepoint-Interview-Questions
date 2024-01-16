@@ -1286,4 +1286,40 @@ Just like the single filter, but instead we add “and” in the beginning (you 
 Sorting Results
 /_api/search/query?querytext='TERM'&sortlist='LastName:ascending,FirstName:ascending'
 
-Q. 
+Power Pages
+Copilot
+Virtual Agent
+Modal Driven Apps
+Service Principal
+User permission define based on user role in Automate
+Dataverse vs SQL difference?
+mockup draw in PowerPages?
+Apply CSS in PowerApps
+SPFX Fast Serve
+Premium Connector 
+Apply site branding automatically using power automate?
+Bring Large data in PowerApps around 50K records?
+Lazy loading in PowerApps?
+Delegation limit handle in PowerApps/MS Flow?
+Create solution in PowerApps?
+powerAutomate for sharing eternal sharing for sharing(If site is not ecternally shared how we can handle in PowerAutonate)
+Delegate services
+Yammer group integration in POwer automate?
+Viva engagement integration in automate
+Azure blob container
+
+Search Lookup filter
+
+
+Hub Site?
+Hub Site is collection of multiple site connected to have common navigation, common news and documents. Also it will search based on all connected sites under hub site. An organisations can have maxximum 2000 hub sites.
+Create Coomunication site from Admin Center > Click on regiaster as new hub Site> You can create another site collection in admin center > Assosciate to an exixting hub site.
+
+Change Search Vertical in SP Online?
+Serach Vertical can be configured in 2 level at Global Admin level and Site Collection level
+Site Collection level:
+Navigate to  Site Settings > Microsoft Search > Search Configuration> Vertical> Add Vertical > Query can be written as filetype:PDF > Next and Finish
+Global Admin Level
+It need to be done at SharePoint Admin > All amin center> Search & Intelligence > Add Verticals
+
+
