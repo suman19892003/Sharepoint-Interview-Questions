@@ -16,6 +16,16 @@ SITE TEMPLATE # 2: COMMUNICATION SITE
 SITE TEMPLATE # 3: TEAM SITE WITHOUT AN OFFICE 365 GROUP
 SITE TEMPLATE # 4: CLASSIC (LEGACY) SITES
 
+//UCB Questions
+Q. If I have to depploy different code to UAT and Prod in CI/CD pipeline, what is option?
+Q. Didplay alert message if user belong to Contribute group and no display if belonging to other group, what should be apparoach, App customizer or webpart in SPFX?
+Q. Display user name in modified by on auto trigger of powerautomate email.
+Q. Call Azure function in SPFX code?
+Q. How to call restricted Azure api in SPFX?
+Q. Where do you set URL for debugging SPFX code?
+Q. React Hooks?
+
+
 Q.EAS Technology
 How to show PowerApps solution to office?
 Azure SQL server connection with PowerApps how to use?
