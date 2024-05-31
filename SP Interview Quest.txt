@@ -23,7 +23,12 @@ Q. Display user name in modified by on auto trigger of powerautomate email.
 Q. Call Azure function in SPFX code?
 Q. How to call restricted Azure api in SPFX?
 Q. Where do you set URL for debugging SPFX code?
+Q. Files available in SPFX solution mainly in config folder and use?
 Q. React Hooks?
+Q. How to debug production solution?
+Q. How do you manage large solution?
+Q. How do you restrict data from accessing region specific data like USA specific data sud not be accessed from India region in api?
+Q. Graph API implementation?
 
 
 Q.EAS Technology
