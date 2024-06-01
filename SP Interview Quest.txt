@@ -29,6 +29,9 @@ Q. How to debug production solution?
 Q. How do you manage large solution?
 Q. How do you restrict data from accessing region specific data like USA specific data sud not be accessed from India region in api?
 Q. Graph API implementation?
+Q. Spread Operator in ReactJS?
+Q. What are all extension avaible in SPFX?
+Q. What is new extension introduced in SPFX?
 
 
 Q.EAS Technology
