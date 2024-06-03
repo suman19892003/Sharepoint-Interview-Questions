@@ -26,7 +26,7 @@ Q. Where do you set URL for debugging SPFX code?
 Q. Files available in SPFX solution mainly in config folder and use?
 Q. React Hooks?
 Q. How to debug production solution?
-Q. How do you manage large solution?
+Q. How do you manage large solution in SPFX?
 Q. How do you restrict data from accessing region specific data like USA specific data sud not be accessed from India region in api?
 Q. Graph API implementation?
 Q. Spread Operator in ReactJS?
@@ -34,6 +34,7 @@ Q. What are all extension avaible in SPFX?
 Q. What is new extension introduced in SPFX?
 Q. why do we use functional component?
 Q. Can we use state inside function component? Syntax
+Q. How to use UseEffect in React?
 
 
 Q.EAS Technology
