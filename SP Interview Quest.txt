@@ -32,6 +32,8 @@ Q. Graph API implementation?
 Q. Spread Operator in ReactJS?
 Q. What are all extension avaible in SPFX?
 Q. What is new extension introduced in SPFX?
+Q. why do we use functional component?
+Q. Can we use state inside function component? Syntax
 
 
 Q.EAS Technology
