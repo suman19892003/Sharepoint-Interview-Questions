@@ -35,7 +35,7 @@ Q. What is new extension introduced in SPFX?
 Q. why do we use functional component?
 Q. Can we use state inside function component? Syntax
 Q. How to use UseEffect in React?
-
+Q. Have you created field set/custom button?
 
 Q.EAS Technology
 How to show PowerApps solution to office?
