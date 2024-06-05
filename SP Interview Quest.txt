@@ -37,6 +37,12 @@ Q. Can we use state inside function component? Syntax
 Q. How to use UseEffect in React?
 Q. Have you created field set/custom button?
 
+//Cognizant
+Copilot Studio Designer
+Adaptive Cards in Chat Bot in Power Virtual Agent
+Use of Azure SQL in Project/Flow
+
+
 Q.EAS Technology
 How to show PowerApps solution to office?
 Azure SQL server connection with PowerApps how to use?
