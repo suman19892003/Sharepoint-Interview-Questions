@@ -18,6 +18,10 @@ We get error as "You are not authorized to send email on behalf of specified sen
 Add Created by as "Send as" in send an email action.it will send email from created by item user account.
 
 Q. For debugging Prod solution in SPFX, We can use
+Option 1:
+Production bundles for SharePoint Framework solutions are minimized. Debugging the minimized code is never easy to point out the exact error.
+Click “Pretty-print this minified file?” and it will transform the minimized ugly code into a pretty code.
+Option 2:
 Spin up your local development environment with: gulp serve --nobrowser
 Append the following to the URL: ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js
 Click on Load debug scripts
