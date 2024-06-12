@@ -17,6 +17,12 @@ In powerautomate, we can use group name we created to send email from.It can sen
 We get error as "You are not authorized to send email on behalf of specified sending account".
 Add Created by as "Send as" in send an email action.it will send email from created by item user account.
 
+Q. For debugging Prod solution in SPFX, We can use
+Spin up your local development environment with: gulp serve --nobrowser
+Append the following to the URL: ?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js
+Click on Load debug scripts
+Doing it this way, you are actually loading the web part from your own local instance without impacting anyone else which is using it.
+
 Q. Templates avaialable in SP Online?
 SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
 SITE TEMPLATE # 2: COMMUNICATION SITE
