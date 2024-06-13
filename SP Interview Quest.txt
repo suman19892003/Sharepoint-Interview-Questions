@@ -58,6 +58,7 @@ Q. Have you created field set/custom button?
 Copilot Studio Designer
 Adaptive Cards in Chat Bot in Power Virtual Agent
 Use of Azure SQL in Project/Flow
+PNP get sharepoint list data as stream?
 
 
 Q.EAS Technology
