@@ -59,6 +59,8 @@ Copilot Studio Designer
 Adaptive Cards in Chat Bot in Power Virtual Agent
 Use of Azure SQL in Project/Flow
 PNP get sharepoint list data as stream?
+What is maximum duration for which Azure function can run? Is there way to increase timeout?
+Graph Api implementation.
 
 
 Q.EAS Technology
