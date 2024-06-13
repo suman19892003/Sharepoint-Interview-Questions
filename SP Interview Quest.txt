@@ -55,6 +55,7 @@ Q. How to use UseEffect in React?
 Q. Have you created field set/custom button?
 
 //Cognizant
+What is recommended approach from Microsoft to use, function component or classs component in spfx react?
 Have you used copilot?
 Copilot Studio Designer
 Adaptive Cards in Chat Bot in Power Virtual Agent
