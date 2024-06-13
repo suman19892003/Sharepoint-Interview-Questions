@@ -55,6 +55,7 @@ Q. How to use UseEffect in React?
 Q. Have you created field set/custom button?
 
 //Cognizant
+Have you used copilot?
 Copilot Studio Designer
 Adaptive Cards in Chat Bot in Power Virtual Agent
 Use of Azure SQL in Project/Flow
