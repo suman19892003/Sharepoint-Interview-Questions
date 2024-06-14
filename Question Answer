@@ -32,3 +32,21 @@ sp.web.list.getbytitle("mylist").items.get()
 return promise.resolve()
 }
 getdata.then(()=>{console.log("success")})
+//Another Way of writing Promise
+componentWillMount() {
+ var promise = new Promise( (resolve, reject) => {
+  let name = 'Paul'
+  if (name === 'Paul') {
+   resolve("Promise resolved successfully");
+  }
+  else {
+   reject(Error("Promise rejected"));
+  }
+ });
+ let obj = {newName: ''};
+ promise.then( result => {
+  this.setState({name: result});
+ }, function(error) {
+  this.setState({name: error});
+ });
+}
