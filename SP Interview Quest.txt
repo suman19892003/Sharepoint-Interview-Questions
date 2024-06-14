@@ -27,6 +27,48 @@ Append the following to the URL: ?loadSPFX=true&debugManifestsFile=https://local
 Click on Load debug scripts
 Doing it this way, you are actually loading the web part from your own local instance without impacting anyone else which is using it.
 
+Q. Consume External  API in SharePoint SPFX
+In order to consume external  api, first we need to get access token from extaernal api,then we can make another call to consume internal data.
+Step 1: Get accees token
+var accesstoken=""
+var apiParameter={
+    "url":"https://apibankingsandbox.icicibank.com/clientcredential/generateaccessToken",
+    "method":"Post",
+    "headers":{
+        "Authorization":"Basic",
+        "Content-Type":"application/json",
+        "Access-control-allow-origin":"*"
+    },
+    "data":{
+    "grant_type":"client_credentials"
+    }
+}
+$.ajax(apiParameter).done((res)=>{
+    console.log(res.access_token);
+    accesstoken=res.access_token
+})
+Step 2:Call API to get data
+$.ajax({
+    "url":"https://apibank.icicibank.com/myapproval/hrms",
+    "method":"Post",
+    "headers":{
+        "apikey":"secred_id",
+        "Authorization":"Bearer "+accesstoken,
+        "Content-Type":"application/json",
+        "Access-control-allow-origin":"*"
+    },
+    "data":JSON.stringify({
+        "EMPID":"2323"
+    }),
+    success:function(apires){
+        console.log(apires.empName);
+    },
+    error:function(xhr,status,err){
+        console.log(err);
+    },
+})
+
+
 Q. Templates avaialable in SP Online?
 SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
 SITE TEMPLATE # 2: COMMUNICATION SITE
