@@ -68,6 +68,32 @@ $.ajax({
     },
 })
 
+Q. Get SharePoint Online Access Token In .Net Core
+SharePoint Online access token is required to perform any CRUD operations outside of SharePoint environment.
+We can do app registration in site collection, no need to go for azure portal
+Step 1. Register the app on SharePoint sitecollection
+    Navigate to https://mysite.sharepoint.com/sites/demo/_layouts/15/appregnew.aspx
+    Client Id: Click on the Generate button on Client Id
+    Client Secret: Click on the Generate button on the Client secret
+    Title: Provide the name of your app 
+    App Domain: Copy and paste the example 'www.contoso.com' (for our purpose, this will work)
+    Redirect URI: Copy and paste the example 'https://www.contoso.com/default.aspx' (for our purpose, this will work)
+Step 2. Install the above registered app on SharePoint Site collection
+    Navigate to https://mysite.sharepoint.com/sites/demo/_layouts/15/appinv.aspx
+    In the App Id textbox, paste the Client Id that we generated in the previous step and click on Lookup
+    On click of Lookup, values for Title, App Domain, and Redirect URI will be auto populated 
+    For Permission Request XML, copy and paste the below XML 
+    <AppPermissionRequests AllowAppOnlyPolicy="true">
+       <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl" />
+    </AppPermissionRequests>
+    Click on the create 
+    Click on Trust It
+    That's it. Our app is now installed in our site collection.
+    You can verify your installed app using /_layouts/15/appprincipals.aspx page
+    Example: https://mysite.sharepoint.com/sites/demo/_layouts/15/appprincipals.aspx
+    Note: This app will be valid for 1 Year only, after 1 year Client ID & Client secret will be expired and we will have register new     App following the same steps.
+Step 3. Get SharePoint Online Access Token using .Net Core 
+    Now we can access site collection resources using dotnet or external appliaction using above client ID and secret.
 
 Q. Templates avaialable in SP Online?
 SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
