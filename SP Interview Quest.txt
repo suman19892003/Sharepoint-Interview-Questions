@@ -105,6 +105,9 @@ Once Client ID and secret is generated, we can acceess Microsft token by
 https://login.microsoftonline.com/{tenantid}/oauth2/token
 which we can later use to peform any operation operation related with list/library/site
 
+Q. What is polyfill used for?
+It is used to provide modern functionality to web browsers.Polyfills allow web developers to use an API regardless of whether or not it is supported by a browser, and usually with minimal overhead. Typically they first check if a browser supports an API, and use it if available, otherwise using their own implementation.
+
 Q. Templates avaialable in SP Online?
 SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
 SITE TEMPLATE # 2: COMMUNICATION SITE
