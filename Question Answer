@@ -24,3 +24,11 @@ Site Collection level:
 Navigate to  Site Settings > Microsoft Search > Search Configuration> Vertical> Add Vertical > Query can be written as filetype:PDF > Next and Finish
 Global Admin Level
 It need to be done at SharePoint Admin > All amin center> Search & Intelligence > Add Verticals
+
+What is the difference between async return and promise resolve?
+An async function will return a different reference, whereas Promise.resolve returns the same reference if the given value is a promise. It can be a problem when you want to check the equality of a promise and a return value of an async function.
+Public getdata=():Promise<void>=>{
+sp.web.list.getbytitle("mylist").items.get()
+return promise.resolve()
+}
+getdata.then(()=>{console.log("success")})
