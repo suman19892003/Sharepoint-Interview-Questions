@@ -95,6 +95,16 @@ Step 2. Install the above registered app on SharePoint Site collection
 Step 3. Get SharePoint Online Access Token using .Net Core 
     Now we can access site collection resources using dotnet or external appliaction using above client ID and secret.
 
+Q. Grapph API Consumption
+For Using graph api,we need to register App registration and consume Client ID and Client Secret generated there.
+App registration > New regsitration > Create
+Create Client Secret and copy as it will not be visible in net time.
+Go to API permission > Add Permission > Select MS Graph > Application Permission> type site>select site.fullcontrol.all > click Add permission
+Click on grant permission as "grant admin consent"
+Once Client ID and secret is generated, we can acceess Microsft token by
+https://login.microsoftonline.com/{tenantid}/oauth2/token
+which we can later use to peform any operation operation related with list/library/site
+
 Q. Templates avaialable in SP Online?
 SITE TEMPLATE # 1: TEAM SITE (WITH AN OFFICE 365 GROUP)
 SITE TEMPLATE # 2: COMMUNICATION SITE
