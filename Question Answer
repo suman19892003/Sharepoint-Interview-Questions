@@ -50,3 +50,6 @@ componentWillMount() {
   this.setState({name: error});
  });
 }
+
+Q. Ternary Operator
+{authenticated ? renderApp() : renderLogin();}
