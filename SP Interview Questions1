@@ -15,4 +15,19 @@ Q. Set default Image if no image available?
   
 Q. How we can configure the outlook email to be trigerred from person who raised not from common account?
 
-Q. 
+Q. Get current Context in SPFX
+this.context.pageContext is available on render() method within top level class that extends BaseClientSideWebPart. Simply pass this.context as a props of to HelloWorld.tsx to reuse it.
+
+Sample (HelloWorldWebpart.ts):
+public render(): void {
+const element: React.ReactElement<any > = React.createElement(
+   HelloWorld,
+   {
+     description: this.properties.description,
+     context: this.context
+   }
+);
+
+ ReactDom.render(element, this.domElement);
+}
+And in HelloWorld.tsx you should be able to retrieve the context as this.props.context
