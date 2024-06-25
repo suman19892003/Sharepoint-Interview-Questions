@@ -31,3 +31,6 @@ const element: React.ReactElement<any > = React.createElement(
  ReactDom.render(element, this.domElement);
 }
 And in HelloWorld.tsx you should be able to retrieve the context as this.props.context
+
+Q. What is difference between Sharepoint group and office 365 group vs teams group?
+
