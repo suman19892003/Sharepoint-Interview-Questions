@@ -61,5 +61,26 @@ const numbersTwo = [4, 5, 6];
 const numbersCombined = [...numbersOne, ...numbersTwo];
 O/P will be 1,2,3,4,5,6
 
-Q. 
+Q. React UserState() implementaion
+const [color, setColor] = useState("red");
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+    </>
+)
+//Another Exampl
+const [car, setCar] = useState({
+    brand: "Ford",
+    model: "Mustang"
+  });
+  return (
+    <>
+      <h1>My {car.brand} and model is {car.model}</h1>
+    </>
+  )
 
+Q. 
