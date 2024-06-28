@@ -687,6 +687,8 @@ Microsoft Search Configure?
 How you will create Teams Webpart?
 If my instances are running and I stopped the flow, what will happen to those flow?
 How to capture running instances of worklow if we want to migrate?
+If we migrate workflow, only workflow history and completed actions will be copied. But running instances will not be copied.
+
 How to create function to create datasource in PowerApps?
 
 People Picker control in SPFX?
