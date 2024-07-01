@@ -82,5 +82,12 @@ const [car, setCar] = useState({
       <h1>My {car.brand} and model is {car.model}</h1>
     </>
   )
+TCS Interview
+Q. Can we customize master pages in SP Online?
+Q. what is diff in search 2010 and 2013?
+Q. Configure search in sp online?
+Q. Distinct values in PowerApps syntax?
+Q. What is CDS in PowerApps?
+Q. Can we play media files in PowerApps?
+Q. On which technology PowerApps is built?
 
-Q. 
