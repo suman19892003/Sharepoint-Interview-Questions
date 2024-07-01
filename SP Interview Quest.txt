@@ -9,6 +9,9 @@
 8. What are new template intoduced in Modern site?
 
 Q. Pass value from one child component to another child component?
+Q. Custom master Pages in SP Online?
+If you are using the Modern view of SharePoint you can't customize the master page nor the page layouts. Neither can you edit the css. You can do theming and site designs though. For custom snippets you can use SPFx to add things like header and footer also custom web parts.
+If you are using the classic experience you can do a custom master page but Microsoft will not support it. You will have to maintain it yourself. Custom page layouts are supported. Custom Web Parts are supported and you can use SPFx web parts on the classic experience.
 
 Q. In Powerautomate, From(Send as) Email option is avaialble for send email on behalf of another user apart from connection used in Outlook. But we need to create user in shared mailbox.
 Go to admin center>Exchange admin center>Exchange>Under Receipients, select groups> Add Group > Manage Delegates > Add Delegate
