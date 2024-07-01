@@ -17,6 +17,8 @@ Connect-AzureAD -Credential (Get-Credential)
 
 //Get Users from Azure AD
 Get-AzureADUser | Export-Csv -Path "C:\Temp\AllUsers.csv" -NoTypeInformation
+//Get Users from SP Online
+Get-SPOUser -Site https://contoso.sharepoint.com/sites/finance
 
 Q. Custom master Pages in SP Online?
 If you are using the Modern view of SharePoint you can't customize the master page nor the page layouts. Neither can you edit the css. You can do theming and site designs though. For custom snippets you can use SPFx to add things like header and footer also custom web parts.
