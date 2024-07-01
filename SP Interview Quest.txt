@@ -31,6 +31,29 @@ In powerautomate, we can use group name we created to send email from.It can sen
 We get error as "You are not authorized to send email on behalf of specified sending account".
 Add Created by as "Send as" in send an email action.it will send email from created by item user account.
 
+Q. Functional Component and class Component Diff?            
+A functional component is just a plain JavaScript pure function that accepts props as an argument and returns a React element(JSX).	
+A class component requires you to extend from React.Component and create a render function that returns a React element.
+There is no render method used in functional components.
+It must have the render() method returning JSX (which is syntactically similar to HTML)
+Functional components run from top to bottom and once the function is returned it can’t be kept alive.
+The class component is instantiated and different life cycle method is kept alive and is run and invoked depending on the phase of the class component.
+Functional  Component also known as Stateless components as they simply accept data and display them in some form, they are mainly responsible for rendering UI.
+Class Components are known as Stateful components because they implement logic and state.
+React lifecycle methods (for example, componentDidMount) cannot be used in functional components.	
+React lifecycle methods can be used inside class components (for example, componentDidMount).
+Hooks can be easily used in functional components to make them Stateful.
+Example:
+const [name,SetName]= React.useState(' ')
+It requires different syntax inside a class component to implement hooks.
+Example:
+constructor(props) {
+   super(props);
+   this.state = {name: ' '}
+}
+Constructors are not used in functional component.
+Constructor is used as it needs to store state in class component. 
+
 Q. For debugging Prod solution in SPFX, We can use
 Option 1:
 Production bundles for SharePoint Framework solutions are minimized. Debugging the minimized code is never easy to point out the exact error.
