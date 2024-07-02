@@ -82,6 +82,10 @@ const [car, setCar] = useState({
       <h1>My {car.brand} and model is {car.model}</h1>
     </>
   )
+
+Q. What is maximum file upload limit in sharepoint library and list attachment?
+For Doc library it is 10 GB per file, for list attachment it is 250 MB per file attachment
+
 TCS Interview
 Q. Can we customize master pages in SP Online?
 Q. what is diff in search 2010 and 2013?
