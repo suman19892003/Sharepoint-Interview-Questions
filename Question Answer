@@ -86,6 +86,10 @@ const [car, setCar] = useState({
 Q. What is maximum file upload limit in sharepoint library and list attachment?
 For Doc library it is 10 GB per file, for list attachment it is 250 MB per file attachment
 
+Q. What is citizen developer?
+citizen developer as an employee who creates applications for themselves or others using tools approved by IT or business units. 
+They typically use low-code and no-code platforms for building internal applications, integrations, workflows, and processes.
+
 TCS Interview
 Q. Can we customize master pages in SP Online?
 Q. what is diff in search 2010 and 2013?
