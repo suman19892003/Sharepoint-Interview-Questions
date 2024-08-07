@@ -44,5 +44,12 @@ Add below line of text in column  formator after schema
 or
 "txtContent": "=if ([$Title] == 'Test1', 'New Record1', if ([$Title] == 'Test2', 'New Record2', if ([$Title] == 'Test3', 'New Record3', [$Title])))"
 
+Q. Apply conditional Show/Hide column in JSON formatter SP List.
+Click on new Item > Top right click on Edit Column > Select the Column > Apply conditional validationa > type
+=if ([$ApprovalLevel] == 'L2', true,false)
+It will hide selected column based on value from ApprovalLevel column
+
 Q. 
+
+
 
