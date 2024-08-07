@@ -38,6 +38,10 @@ Q. What is CDS in PowerApps?
 
 Q. JSON conditional formatting for SPO list column?
 Add below line of text in column  formator after schema
+//Conditional validation based on another column(ApprovalLevel)
+"elmType": "div",
+"txtContent": "=if ([$ApprovalLevel] == 'L2', 'Approved','@currentField')"
+or
 "txtContent": "=if ([$Title] == 'Test1', 'New Record1', if ([$Title] == 'Test2', 'New Record2', if ([$Title] == 'Test3', 'New Record3', [$Title])))"
 
 Q. 
