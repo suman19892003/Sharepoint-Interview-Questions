@@ -135,7 +135,17 @@ Go to New Item > Right Side of new form > click Configure Layout. It willl have 
     ]
 }
 
-Q.
+Q. Add JSON validator for adding dynamic Hyper Link text adn URL
+Create New column as Hyperlink link type > Format Column > 
+{ "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+"elmType": "div", 
+"children": [ { "elmType": "a", 
+"attributes": { "target": "_blank", "href": { "operator": "+", "operands": [ "http://anywebsite?ID=", "[$ID]" ] } }, 
+"txtContent": "Some text" } ] }
+
+Q. 
+
+
 
 
 
