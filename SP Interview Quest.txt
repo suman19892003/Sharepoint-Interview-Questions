@@ -7,6 +7,14 @@
 6. Site Template in Modern Site.
 7. Modern site header and footer design change, Navigation
 8. What are new template intoduced in Modern site?
+9. Get manager Details in PowerApps?
+   Office365Users.ManagerV2(DataCardValue10_1.Selected.Email)
+
+10. Get logged user details
+   Office365Users.MyprofileV2().mail
+
+Q. Get current Users manager in SPFX?
+
 
 Q. Pass value from one child component to another child component?
 
