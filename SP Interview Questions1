@@ -5,6 +5,8 @@ Application permissions are used when the application calls the API as itself. F
 Q. Is there any limitation on the data that we can bind to the drop down in PowerApps?
 
 Q. What is invariant error in React?
+The error message “Uncaught Invariant Violation: Hooks can only be called inside the body of a function component” occurs when you attempt to use React hooks, 
+which are special functions that allow you to add state and other React features to functional components, outside the scope of a function component.
 
 Q. Display User image in SPFX Solution?
   const avatar = `${webUrl}/_layouts/15/userphoto.aspx?size=L&username=${email}`
