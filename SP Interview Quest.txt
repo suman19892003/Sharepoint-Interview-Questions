@@ -174,11 +174,18 @@ Q. How do you restrict data from accessing region specific data like USA specifi
 Q. Graph API implementation?
 Q. Spread Operator in ReactJS?
 Q. What are all extension avaible in SPFX?
-Q. What is new extension introduced in SPFX?
+Q. What is new extension introduced in SPFX? - Form Customizer
 Q. why do we use functional component?
 Q. Can we use state inside function component? Syntax
 Q. How to use UseEffect in React?
 Q. Have you created field set/custom button?
+
+Q. What are all extension avaible in SPFX?
+Application Customizers: Adds scripts to the page, and accesses well-known HTML element placeholders and extends them with custom renderings.
+Field Customizers: Provides modified views to data for fields within a list.
+Command Sets: Extends the SharePoint command surfaces to add new actions, and provides client-side code that you can use to implement behaviors.
+Form Customizer: Provides a way to assoicate and override default new, edit and view form experience of list and libraries with custom forms by associating component to content type . 
+
 
 //Cognizant
 What is recommended approach from Microsoft to use, function component or classs component in spfx react?
