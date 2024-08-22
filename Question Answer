@@ -95,6 +95,7 @@ Q. Can we customize master pages in SP Online?
 Q. what is diff in search 2010 and 2013?
 Q. Configure search in sp online?
 Q. Distinct values in PowerApps syntax?
+ Distinct( CityPopulations, Country )
 Q. What is CDS in PowerApps?
 Q. Can we play media files in PowerApps? How you will use media file?
 Q. On which technology PowerApps is built?
