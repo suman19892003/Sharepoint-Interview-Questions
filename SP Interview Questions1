@@ -7,6 +7,8 @@ Q. Is there any limitation on the data that we can bind to the drop down in Powe
 Q. What is invariant error in React?
 The error message “Uncaught Invariant Violation: Hooks can only be called inside the body of a function component” occurs when you attempt to use React hooks, 
 which are special functions that allow you to add state and other React features to functional components, outside the scope of a function component.
+React hooks, like useState, useEffect, useContext, etc., are designed to be used only within the body of functional components. They cannot be used inside regular JavaScript functions, class components, or other non-functional contexts. 
+This restriction ensures that hooks work correctly and maintain their intended behavior.
 
 Q. Display User image in SPFX Solution?
   const avatar = `${webUrl}/_layouts/15/userphoto.aspx?size=L&username=${email}`
@@ -37,6 +39,8 @@ And in HelloWorld.tsx you should be able to retrieve the context as this.props.c
 Q. What is difference between Sharepoint group and office 365 group vs teams group?
 
 Q. What is CDS in PowerApps?
+Common Data Service (CDS) is a solution for securely storing and managing data that's being utilised by business applications, most notably those of the Power Platform. 
+Think of CDS as a cloud database, made up of many tables.
 
 Q. JSON conditional formatting for SPO list column?
 Add below line of text in column  formator after schema
