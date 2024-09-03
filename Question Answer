@@ -107,3 +107,14 @@ Capgemini
 Q. How you will bring user specific details like department/location in SPFX?
 Q. How you will solve versioning issue in SPFX solution?
 Q. 
+
+Q. Filter based on logged user data
+_spPageContextInfo.userId
+https://<site-url>/_api/web/lists/getbytitle('Personal Links')/items?$filter=Author eq 6
+or
+https://<site-url>/_api/web/lists/getbytitle('MyList')/items?$filter=Author/EMail eq 'r@tenant-name.onmicrosoft.com'
+or
+return sp.web.lists.getByTitle('Personal Links').items.filter(`Author/EMail eq '${encodeURIComponent(this.context.pageContext.user.email)}'`)
+.select('Title').get();
+
+Q. 
