@@ -117,4 +117,21 @@ or
 return sp.web.lists.getByTitle('Personal Links').items.filter(`Author/EMail eq '${encodeURIComponent(this.context.pageContext.user.email)}'`)
 .select('Title').get();
 
+//New Interview Questions
+Q. Which version of ShareGate used?
+Q. What is issue you got in migration in ShareGate?
+Q. What kind of permission you provide in PowerApps?
+Q. Set and Collect difference?
+Q. Have you depoloyed command set? How you have done?
+Q. Application customizer deployment for header and footer?
+Q. What is manifest.json file?
+Q. What is structure of SPFX solution?
+Q. Language localiization in PowerApps and SPFX?
+Q. How to trigger PowerAutomate from PowerApps?
+Q. How to add inputs for SPFX solution for adding centrally list name?
+Q. Powershell for getting all checkout item from document library?
+Q. Graph API implementaion
 Q. 
+
+
+
