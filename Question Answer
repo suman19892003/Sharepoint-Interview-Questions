@@ -150,7 +150,13 @@ Q. apply field level security in powerapps
 Q. Difference between get() and getall()
 Q. What is use of indexed column?Why we use it?
 Q. What is total number of Lookup columns we can have in list?
-Q. 
+Q. What is hurdles we get in ShareGate migration? 
+Folder level incrementation migration creates issues.
+Migration of document takes its actaul permision along with version history
+We have to give user mapping for unresolved account, else item will not be migrated
+For migration of list/library which was already done, we have to go for incremental migration
+All nintex workflow and visual studio webparts willnot be migrated.
+
 
 
 
