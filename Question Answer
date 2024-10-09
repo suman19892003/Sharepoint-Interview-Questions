@@ -157,7 +157,10 @@ We have to give user mapping for unresolved account, else item will not be migra
 For migration of list/library which was already done, we have to go for incremental migration
 All nintex workflow and visual studio webparts willnot be migrated.
 Q. What column does ShareGate consider whiile migrating or moving SharePoint files?
-
+Q. Update and Patch difference in powerApps?
+Q. What are modes available in Form in Powerapp? New/Edit/View
+Q. Save and Update List data using form? SubmitForm(myForm)
+Q. Save and Update List data without using form?
 
 
 
