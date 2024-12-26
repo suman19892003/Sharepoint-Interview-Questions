@@ -170,6 +170,13 @@ Q. Azure Storage
 Q. Azure Web API
 Q. Azure Function App/Logic App
 
+//PowerApps Drawbacks
+If we have more than 150 columns, its creates issues in opening list integrated forms
+If we have more than 12 columns, it creates problem in creating new columns in SP List. 
+Note: Total count is considered inclusive of LookUp and Metadata Column.  It sud not increase more than 12 count.
+
+
+
 
 
 
