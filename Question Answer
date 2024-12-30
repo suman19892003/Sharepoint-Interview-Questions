@@ -169,6 +169,8 @@ Q. Azure AI/ML/Cognitive Services
 Q. Azure Storage
 Q. Azure Web API
 Q. Azure Function App/Logic App
+Q. Send email notification through powerapps not using PowerAutomate
+Q. Export To Excel in PowerApps? store file in loggedin person onedrive and then download from his drive
 
 //PowerApps Drawbacks
 If we have more than 150 columns, its creates issues in opening list integrated forms
