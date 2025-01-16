@@ -171,6 +171,7 @@ which template would you like to use (No Javascript/React) >
 Q. Form Customizer - 
 imports from BaseFormCustomizer
 We can create 3 different screen for new, edit and view
+We can create desin of maps to show on page or some other chart/graph on our spfx form
 In Rest while form update, we have to use eTag(Entity tag) as it ensures that others canot edit the item while updating from our form
 in Oninit method, if(this.displaymode==FormDisplayMode.New){
 }
