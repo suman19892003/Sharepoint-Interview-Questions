@@ -149,7 +149,27 @@ Create New column as Hyperlink link type > Format Column >
 "attributes": { "target": "_blank", "href": { "operator": "+", "operands": [ "http://anywebsite?ID=", "[$ID]" ] } }, 
 "txtContent": "Some text" } ] }
 
-Q. 
+Q. Default Option available in SPFX?
+Webpart
+Extension
+Library
+Adaptive Card Etension
+
+Q. Default Option available in SPFX Extension?
+Application Customizer
+Field Customizer
+Listview Command Set
+Form Customizer
+
+Q. Steps in creating SPFX?
+Solution Name > 
+Which type of client side component to create > 
+which type of extension to create > 
+what is webpart/customizername >
+which template would you like to use (No Javascript/React) >
+
+Q. Form Customizer - imports from BaseFormCustomizer
+
 
 
 
