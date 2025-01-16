@@ -170,6 +170,21 @@ which template would you like to use (No Javascript/React) >
 
 Q. Form Customizer - imports from BaseFormCustomizer
 
+Q. ListView Command Set - 
+It creates custom button in list view ribbon. It creates filenamemanifest.json inside src folder.
+Import frrom BaseListviewCommandSet
+Change pageurl inside serve.json
+ListId is used in element.xml for attaching in list which is 101 for custom list
+element.selectedRows[0].getValueByName('FileRef')
+Currently we cannot add subcommand and group under commands in SPFX, but it can be achieved in PowerShell
+
+Q. Field Customizer
+It allows to modify field in list view. It can be used directly tothe fields or site columns.
+Imports from BaseFieldCustomizer
+onRendercell() is default in .ts file to add logic
+element.xml is there to define column name.
+
+
 
 
 
